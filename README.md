@@ -264,7 +264,7 @@ Calibpca_model= selectCompNum(Calibpca_model, 5)
 ```
 + Access the loadings and the scores
 
-``R
+```R
 Calibpca_model$loadings[1:4, 1:4]
 ```
 
@@ -275,9 +275,12 @@ Calibpca_model$loadings[1:4, 1:4]
 3 0.02880470 0.06849692 -0.01527204 -0.2816507
 4 0.02839777 0.05369044 -0.06064988 -0.3126289
 ```
+
+
 ```R
 Calibpca_model$res$cal$scores[1:4, 1:4]
 ```
+
 ```
  Comp 1    Comp 2    Comp 3     Comp 4
 SamplesData.NIR.A2 7.752818 -11.89528 0.6831984 -0.5235035
@@ -285,10 +288,12 @@ SamplesData.NIR.A3 7.578034 -13.23961 1.8856384 -0.3665607
 SamplesData.NIR.A4 7.488082 -12.38351 0.1403219  1.3298068
 SamplesData.NIR.A6 7.366403 -10.72870 1.8437984 -1.5862289
 ```
+
 ```
 Predictnmodel = predict(Calibpca_model, testset)
 print(Predictnmodel) 
 ```
+
 ```
 Results for PCA decomposition (class pcares)
 Major fields:
@@ -344,6 +349,7 @@ $cumexpvar - cumulative explained variance
 
 *some statistics for evaluation of a model performance*
 
+
 ```
 summary(Calibpca_model)
 ```
@@ -364,7 +370,7 @@ Comp 6     2.196   0.96     90.36 12  3
 Comp 7     1.852   0.81     91.17 12  4
 ```
 
-``
+```
 var = data.frame(
   cal = Calibpca_model$res$cal$expvar,
   test = Calibpca_model$res$test$expvar)
