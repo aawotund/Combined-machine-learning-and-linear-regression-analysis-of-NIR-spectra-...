@@ -1288,12 +1288,14 @@ plotRMSE(PLS_Prediction2)
 ```
 plotPredictions(PLS_Prediction1)
 ```
+
 ![Rplot21](https://user-images.githubusercontent.com/68889345/131265694-5a3fd950-13c2-4075-a531-c98359ca855d.png)
 
 
 ```
 plotPredictions(PLS_Prediction1, ncomp = 1)
 ```
+
 ![Rplot22](https://user-images.githubusercontent.com/68889345/131266274-54ba14ec-6491-4db8-9da0-2b01bbda73f5.png)
 
 
@@ -1319,6 +1321,7 @@ plotPredictions(PLS_Prediction1$res$cal, show.stat = TRUE)
 ```
 plotPredictions(PLS_Prediction1$res$cal, ncomp = 2, show.stat = TRUE)
 ```
+
 ![Rplot28](https://user-images.githubusercontent.com/68889345/131266504-730d78cc-c993-4b94-a9fe-ea7bc6678759.png)
 
 
@@ -1331,6 +1334,7 @@ plot(PLS_Prediction1)
 ```
 plot(PLS_Prediction2)
 ```
+
 ![Rplot27](https://user-images.githubusercontent.com/68889345/131266024-cbfafc73-471a-4102-8829-55100a2a893a.png)
 
 ```
@@ -1377,7 +1381,9 @@ Cal   8.43     71.73 95  0  0  5    NA  0.95     0.95
 
 ```
 plot(Simca_pca_s.1090ACAA)
-```![Rplot29](https://user-images.githubusercontent.com/68889345/131266840-62d7124e-ea88-45d4-8dd7-57472210ac69.png)
+```
+
+![Rplot29](https://user-images.githubusercontent.com/68889345/131266840-62d7124e-ea88-45d4-8dd7-57472210ac69.png)
 
 
 
