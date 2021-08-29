@@ -39,7 +39,7 @@ ClassRef<-read.csv("ClassRef.csv",sep=",",dec=".",header=TRUE)  #Load CSV file c
 + Convert the spectra to data frane and split them to each set of 12 categories
 + Group the spectra to each categories
 
-```
+```R
 RawSpectra<-data.frame(SamplesData$NIR)
 RawSpectra<-t(RawSpectra)
 S1090ACAA<-RawSpectra[1:100,]
@@ -85,9 +85,10 @@ S100AA : Sample Matrix Formulation 1O0 AA
 S100LA : Sample Matrix Formulation 100 LA
 
 
+
 Plot the raw spectra of each 12 categories of 100 spectra
 
-```
+```R
 layout(matrix(c(1,2,3), 3, 1))
 matplot(Wavelength,t(S1090ACAA), type = "l",lty=1,col=1,xlab = "wavelength (nm)", ylab = "Absorbance (au)", main = "S1090ACAA") 
 matplot(Wavelength,t(S1090ACLA), type = "l",lty=1,col=2,xlab = "wavelength (nm)", ylab = "Absorbance (au)", main = "S1090ACLA") 
@@ -118,12 +119,13 @@ Below are the outcome of the treatment and what each denote:
 
 
 
-*Apply SNV data pretreatment the spectra*
+* - Apply SNV data pretreatment the spectra*
 
-```
+```R
 snvspectra = prep.snv(RawSpectra)
 ```
 - Split the snv treated spectra to the 12 different categories
+
 
 snvS1090ACA : SNV transformed S1090ACAA
 
@@ -150,7 +152,8 @@ snvS100AA : SNV transformed S100AA
 snvS100LA : SNV transformed S100LA
 
 
-```
+
+```R
 snvS1090ACAA<-snvspectra[1:100,]
 snvS1090ACLA<-snvspectra[101:200,]
 snvS1090AALA<-snvspectra[201:300,]
@@ -163,11 +166,10 @@ snvS9010AALA<-snvspectra[801:900,]
 snvS100AC<-snvspectra[901:1000,]
 snvS100AA<-snvspectra[1001:1100,]
 snvS100LA<-snvspectra[1101:1200,]
-
 ```
 *Plot the SNV tranformed data*
 
-```
+```R
 matplot(Wavelength,t(snvS1090ACAA), type = "l",lty=1,col=1,xlab = "wavelength (nm)", ylab = "Transformed Absorbance",main = "snvS1090ACAA" )
 matplot(Wavelength,t(snvS1090ACLA), type = "l",lty=1,col=2,xlab = "wavelength (nm)", ylab = "Transformed Absorbance",main = "snvS1090ACLA")
 matplot(Wavelength,t(snvS1090AALA), type = "l",lty=1,col=3,xlab = "wavelength (nm)", ylab = "Transformed Absorbance",main = "snvS1090AALA") 
@@ -193,13 +195,13 @@ matplot(Wavelength,t(snvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (nm)
 
 *Apply SG filter for smoothing and take a second derivative*
 
-```
+```R
 SGspectra = prep.savgol(snvspectra, width = 17, porder = 2, dorder = 2)
 ```
 
 - Split the SG filter treated spectra to the 12 different categories
 
-```
+
 
 SGFsnvS1090ACAA : Savytzky-Golay transformed S1090ACAA
 
@@ -224,10 +226,10 @@ SGFsnvS100AC : Savytzky-Golay transformed S100AC
 SGFsnvS100AA : Savytzky-Golay transformed S100AA
 
 SGFsnvS100LA : Savytzky-Golay transformed S100LA
-```
+
 *Plot the SNV tranformed data*
 
-```
+```R
 
 matplot(Wavelength,t(SGFsnvS1090ACAA), type = "l",lty=1,col=1,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS1090ACAA")
 matplot(Wavelength,t(SGFsnvS1090ACLA), type = "l",lty=1,col=2,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS1090ACLA") 
@@ -252,7 +254,7 @@ matplot(Wavelength,t(SGFsnvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (
 
 *Split the treated data to two : Calibration set = Calib set and validation set = testset, then build PCA model*
 
-```
+```R
 ispect = seq(1, 1200, 4)
 calibset = SGspectra[-ispect, ]
 testset = SGspectra[ispect, ]
@@ -262,7 +264,7 @@ Calibpca_model= selectCompNum(Calibpca_model, 5)
 ```
 + Access the loadings and the scores
 
-``
+``R
 Calibpca_model$loadings[1:4, 1:4]
 ```
 
@@ -273,7 +275,7 @@ Calibpca_model$loadings[1:4, 1:4]
 3 0.02880470 0.06849692 -0.01527204 -0.2816507
 4 0.02839777 0.05369044 -0.06064988 -0.3126289
 ```
-```
+```R
 Calibpca_model$res$cal$scores[1:4, 1:4]
 ```
 ```
@@ -289,7 +291,6 @@ print(Predictnmodel)
 ```
 ```
 Results for PCA decomposition (class pcares)
-
 Major fields:
 $scores - matrix with score values
 $T2 - matrix with T2 distances
@@ -300,19 +301,21 @@ $cumexpvar - cumulative explained variance
 ```
 
 
-+ PCA model with test set validation (we will use testset to validate) +
++ PCA model with test set validation (we will use testset to validate) 
 
+```
 Calibpca_model = pca(calibset,7,scale = TRUE, x.test=testset, info = "PCA model")
 Calibpca_model = selectCompNum(Calibpca_model, 5)
+```
 
 *Info for both result objects*
 
 ```
 print(Calibpca_model$res$cal)
 ```
+
 ```
 Results for PCA decomposition (class pcares)
-
 Major fields:
 $scores - matrix with score values
 $T2 - matrix with T2 distances
@@ -325,6 +328,7 @@ $cumexpvar - cumulative explained variance
 ```
 print(Calibpca_model$res$test)
 ```
+
 ```
 Results for PCA decomposition (class pcares)
 
@@ -379,17 +383,19 @@ Comp 7  0.8  0.7
 ```
 *scores and loadings plots for PC1 vs PC2*
 
-par(mfrow = c(1, 1))
-
 ```
+par(mfrow = c(1, 1))
 mdaplot(Calibpca_model$res$cal$scores, type = "p",show.labels = FALSE, show.lines = c(0, 0))
 ```
+
 ```
 ![Rplot13](https://user-images.githubusercontent.com/68889345/131245998-36ae9dfd-d171-4a65-b1af-85e652575a0d.png)
 ```
+
 ```
 mdaplot(Calibpca_model$loadings, type = "p", show.labels = TRUE, show.lines = c(0, 0))
 ```
+
 ```
 ![Rplot14](https://user-images.githubusercontent.com/68889345/131246156-1bd2d233-bd03-448b-b212-fc31882f6969.png)
 ```
@@ -400,19 +406,21 @@ Calibpca_modelx = SGspectra[-ispectra, -(c(1,2))]
 Calibpca_modely= SGspectra[-ispectra, 2, drop = FALSE]
 testset_modelx= SGspectra[ispectra, -(c(1,2))]
 testset_modely = SGspectra[ispectra, 2, drop = FALSE]
+```
 
-*PLS_Prediction = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, info = "Conc. prediction model")*
-
+```
 PLS_Prediction = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, info = "Conc. prediction model")
 PLS_Prediction = selectCompNum(PLS_Prediction, 3)
 ```
+
+```
 print(PLS_Prediction)
 ```
+
 ```
 PLS model (class pls)
 Call:
 selectCompNum.pls(obj = PLS_Prediction, ncomp = 3)
-
 Major fields:
 $ncomp - number of calculated components
 $ncomp.selected - number of selected components
@@ -421,7 +429,6 @@ $xloadings - vector with x loadings
 $yloadings - vector with y loadings
 $weights - vector with weights
 $res - list with results (calibration, cv, etc)
-
 Try summary(model) and plot(model) to see the model performance.
 ```
 
@@ -430,10 +437,8 @@ Try summary(model) and plot(model) to see the model performance.
 PLS_Prediction$coeffs$values
 ```
 
-
 ```
 , , 2
-
            Comp 1        Comp 2        Comp 3        Comp 4        Comp 5
 3    0.0127021715  2.228392e-02  1.038451e-01  1.314928e-01  1.829564e-01
 4    0.0114796364  2.067413e-02  1.007242e-01  1.261369e-01  1.592348e-01
@@ -720,10 +725,9 @@ PLS_Prediction$coeffs$values
 142 -6.022588e-03 -6.556530e-03
 143 -7.609299e-03 -8.727902e-03
 144 -6.627452e-03 -7.735110e-03
-
 attr(,"yaxis.name")
 [1] "Predictors"
-
+```
 
 ```
 par(mfrow = c(1, 1))
@@ -736,9 +740,9 @@ plotRegcoeffs(PLS_Prediction)
 ```
 plotRegcoeffs(PLS_Prediction, ncomp = 2)
 ```
+
 ```
 ![Rplot16](https://user-images.githubusercontent.com/68889345/131247653-2e258294-bcb5-4f8d-a8b9-9dc58d3b7794.png)
-
 ```
 
 
@@ -746,24 +750,22 @@ plotRegcoeffs(PLS_Prediction, ncomp = 2)
 plot(PLS_Prediction$coeffs, ncomp = 3, type = "b", show.labels = FALSE)
 ```
 
-```
 ![Rplot17](https://user-images.githubusercontent.com/68889345/131247710-f1c3d27f-e427-400b-82d4-8c853800b39f.png)
 
-```
 
-```
+```R
 plot(PLS_Prediction$coeffs, ncomp = 2)
 ```
-```
+
+
 ![Rplot18](https://user-images.githubusercontent.com/68889345/131247958-ea884e81-9f72-47fa-873b-217e99a98b4f.png)
-```
+
 
 ```
 show(PLS_Prediction$coeffs$values[, 3, 1])
 ```
 
 ```
-> show(PLS_Prediction$coeffs$values[, 3, 1])
             3             4             5             6             7 
  1.038451e-01  1.007242e-01  9.429490e-02  8.424283e-02  6.373930e-02 
             8             9            10            11            12 
@@ -859,71 +861,485 @@ show(PLS_Prediction$coeffs$values[, 3, 1])
 ```
 
 
+```
 summary(PLS_Prediction$coeffs)
+```
+
+```
+Regression coefficients for 2 (ncomp = 1)
+-----------------------------------------
+          Coeffs    Std. err. t-value p-value         2.5%         97.5%
+3   0.0127021715 0.0003741618   33.95   0.000  0.011967839  0.0134365037
+4   0.0114796364 0.0003667514   31.30   0.000  0.010759848  0.0121994250
+5   0.0099842869 0.0003725332   26.80   0.000  0.009253151  0.0107154230
+6   0.0079432848 0.0003891030   20.41   0.000  0.007179629  0.0087069407
+7   0.0045402607 0.0003958370   11.47   0.000  0.003763388  0.0053171330
+8  -0.0014090281 0.0003972690   -3.55   0.000 -0.002188711 -0.0006293454
+9  -0.0091592007 0.0003291813  -27.82   0.000 -0.009805254 -0.0085131475
+10 -0.0092804071 0.0003564219  -26.04   0.000 -0.009979923 -0.0085808913
+11 -0.0079995924 0.0004346258  -18.41   0.000 -0.008852592 -0.0071465932
+12 -0.0059959182 0.0005236332  -11.45   0.000 -0.007023604 -0.0049682324
+13 -0.0046673257 0.0005892436   -7.92   0.000 -0.005823779 -0.0035108725
+14 -0.0039123014 0.0006149721   -6.36   0.000 -0.005119250 -0.0027053532
+15 -0.0035530790 0.0006225812   -5.71   0.000 -0.004774961 -0.0023311972
+16 -0.0033691506 0.0006166692   -5.46   0.000 -0.004579429 -0.0021588717
+17 -0.0034593570 0.0006173053   -5.60   0.000 -0.004670884 -0.0022478298
+18 -0.0036889645 0.0006073517   -6.07   0.000 -0.004880957 -0.0024969722
+19 -0.0036733206 0.0005906700   -6.22   0.000 -0.004832573 -0.0025140680
+20  0.0028713412 0.0004156213    6.91   0.000  0.002055640  0.0036870421
+21  0.0047725033 0.0005091977    9.37   0.000  0.003773149  0.0057718578
+22  0.0051009001 0.0005286539    9.65   0.000  0.004063361  0.0061384396
+23  0.0052725917 0.0005262413   10.02   0.000  0.004239787  0.0063053962
+24  0.0053782084 0.0005281373   10.18   0.000  0.004341683  0.0064147340
+25  0.0054244750 0.0005276016   10.28   0.000  0.004389001  0.0064599493
+26  0.0053394597 0.0005285489   10.10   0.000  0.004302126  0.0063767931
+27  0.0049222603 0.0005350793    9.20   0.000  0.003872110  0.0059724102
+28  0.0034021914 0.0005512492    6.17   0.000  0.002320306  0.0044840765
+29 -0.0037899148 0.0003317006  -11.43   0.000 -0.004440912 -0.0031389171
+30 -0.0087157681 0.0003505696  -24.86   0.000 -0.009403798 -0.0080277380
+31 -0.0087542269 0.0003995997  -21.91   0.000 -0.009538484 -0.0079699700
+32 -0.0087464112 0.0004101597  -21.32   0.000 -0.009551393 -0.0079414292
+33 -0.0089894019 0.0004030514  -22.30   0.000 -0.009780433 -0.0081983706
+34 -0.0091876490 0.0004001238  -22.96   0.000 -0.009972935 -0.0084023634
+35 -0.0093455834 0.0003951597  -23.65   0.000 -0.010121126 -0.0085700406
+36 -0.0092807371 0.0004001787  -23.19   0.000 -0.010066130 -0.0084953439
+37 -0.0089993571 0.0004160852  -21.63   0.000 -0.009815968 -0.0081827456
+38 -0.0083094006 0.0004461140  -18.63   0.000 -0.009184947 -0.0074338544
+39 -0.0065230415 0.0004895419  -13.32   0.000 -0.007483820 -0.0055622635
+40 -0.0031493746 0.0004979258   -6.32   0.000 -0.004126607 -0.0021721422
+41 -0.0001578518 0.0004550806   -0.35   0.729 -0.001050996  0.0007352921
+42  0.0022912842 0.0003788281    6.05   0.000  0.001547794  0.0030347745
+43  0.0037168468 0.0003940549    9.43   0.000  0.002943472  0.0044902214
+44  0.0020696271 0.0005100934    4.06   0.000  0.001068515  0.0030707395
+45 -0.0006232272 0.0004983906   -1.25   0.211 -0.001601372  0.0003549173
+46 -0.0026138800 0.0004088860   -6.39   0.000 -0.003416362 -0.0018113978
+47 -0.0035175943 0.0003603810   -9.76   0.000 -0.004224880 -0.0028103083
+48 -0.0039179870 0.0003347579  -11.70   0.000 -0.004574985 -0.0032609891
+49 -0.0043171563 0.0003086455  -13.99   0.000 -0.004922906 -0.0037114066
+50 -0.0046240967 0.0002857827  -16.18   0.000 -0.005184976 -0.0040632178
+51 -0.0049283434 0.0002628036  -18.75   0.000 -0.005444123 -0.0044125633
+52 -0.0049834882 0.0002560620  -19.46   0.000 -0.005486037 -0.0044809392
+
+Degrees of freedom (Jack-Knifing): 899
+```
 
 ```
 show(getRegcoeffs(PLS_Prediction, ncomp = 3))
 ```
 
 ```
+              Estimated
+Intercept  1.284445e-03
+3          9.421868e-02
+4          8.551950e-02
+5          7.887888e-02
+6          7.463231e-02
+7          6.433801e-02
+8          2.261767e-02
+9         -5.441640e-02
+10        -6.057692e-02
+11        -3.950666e-02
+12        -1.633312e-02
+13        -4.996138e-03
+14         6.447132e-04
+15         2.775189e-03
+16         4.073474e-03
+17         3.192663e-03
+18        -2.591651e-03
+19        -5.048613e-02
+20        -9.284102e-02
+21        -1.977957e-02
+22        -8.615754e-03
+23        -5.374406e-03
+24        -3.840275e-03
+25        -3.292272e-03
+26        -3.794513e-03
+27        -6.356882e-03
+28        -1.593428e-02
+29        -5.147183e-02
+30        -2.108441e-02
+31        -1.054891e-02
+32        -9.075288e-03
+33        -1.146635e-02
+34        -1.497502e-02
+35        -2.031501e-02
+36        -2.643518e-02
+37        -3.456479e-02
+38        -5.273354e-02
+39        -7.505003e-02
+40        -8.694608e-02
+41        -7.239719e-02
+42        -6.110831e-02
+43        -2.362401e-02
+44         1.843856e-02
+45         2.098952e-02
+46         9.682648e-03
+47         5.894283e-03
+48         4.430786e-03
+49         3.586660e-03
+50         3.679548e-03
+51         3.434719e-03
+52         3.799449e-03
+53         4.469379e-03
+54         1.049074e-02
+55         4.848434e-02
+56        -2.069018e-03
+57        -1.799345e-03
+58        -1.292936e-03
+59        -1.093293e-03
+60        -1.024441e-03
+61        -9.048051e-04
+62        -7.742414e-04
+63        -5.454963e-04
+64         1.172377e-04
+65         4.374509e-03
+66         5.283119e-02
+67         3.503459e-02
+68         2.480641e-02
+69         3.592116e-02
+70         3.314733e-02
+71         1.097832e-02
+72         5.555308e-03
+73         5.370291e-03
+74         1.479736e-02
+75         7.712457e-03
+76         1.448295e-03
+77         2.208133e-04
+78        -5.787587e-04
+79        -1.155150e-03
+80        -1.388320e-03
+81        -1.596935e-03
+82        -2.102553e-03
+83        -2.920888e-03
+84        -4.712826e-03
+85        -6.229154e-03
+86        -1.359825e-02
+87        -3.610479e-03
+88        -3.931069e-03
+89         1.020162e-02
+90         6.914751e-03
+91         5.008741e-03
+92         7.034272e-03
+93        -8.676110e-04
+94        -1.007912e-02
+95        -3.126636e-02
+96        -4.168786e-02
+97        -2.281178e-02
+98        -1.476904e-02
+99        -1.268110e-02
+100       -1.309509e-02
+101       -1.579429e-02
+102       -2.907231e-02
+103       -4.488491e-02
+104       -1.913459e-02
+105       -4.661358e-03
+106       -2.459198e-03
+107       -2.818276e-04
+108        1.704216e-03
+109        3.639795e-03
+110        5.661094e-03
+111        8.340101e-03
+112        1.263333e-02
+113        1.642684e-02
+114        8.183726e-02
+115        6.420117e-02
+116        2.140995e-02
+117        1.127866e-02
+118        7.535287e-03
+119        5.049744e-03
+120        4.563649e-03
+121        4.347086e-03
+122        3.644395e-03
+123        3.470032e-03
+124        3.962810e-03
+125       -4.588956e-03
+126       -1.395070e-02
+127       -8.810103e-03
+128       -6.654748e-03
+129       -3.468658e-03
+130        2.425124e-03
+131        3.663506e-03
+132        3.218076e-03
+133        2.536605e-03
+134        2.021060e-03
+135        1.664403e-03
+136        1.558063e-03
+137        1.152933e-03
+138        7.894346e-04
+139        5.285169e-04
+140        1.949004e-04
+141       -3.149531e-04
+142       -1.370996e-03
+143       -3.373044e-03
+144       -8.370007e-03
+145       -4.667899e-03
+146        1.015400e-03
+147        9.669320e-04
+148        8.562666e-04
+149        8.113154e-04
+150        8.256297e-04
+151        9.050169e-04
+152        1.050217e-03
+153        1.186248e-03
+154        1.122281e-03
+155       -2.188046e-03
+156       -2.443566e-02
+157       -8.365405e-03
+158       -4.944404e-03
+159       -4.040928e-03
+160       -3.940194e-03
+161       -4.159548e-03
+162       -4.211800e-03
+163       -4.850324e-03
+164       -5.728228e-03
+165       -5.336260e-03
+166       -3.700279e-03
+167       -7.935958e-04
+168        2.005542e-03
+169        4.577878e-03
+170        6.704520e-03
+171        8.020384e-03
+172        6.262713e-03
+173       -7.287955e-05
+174       -2.894595e-03
+175       -3.249388e-03
+176       -2.898138e-03
+177       -3.427495e-03
+178       -3.915744e-03
+179       -9.351694e-03
+180       -2.572291e-02
+181       -1.888179e-03
+182        1.725004e-03
+183        2.633953e-03
+184        3.182238e-03
+185        3.652349e-03
+186        4.664902e-03
+187        7.192926e-03
+188        1.667742e-02
+189        1.786295e-02
+190        1.452201e-03
+191       -1.239047e-03
+192       -1.556603e-03
+193       -2.090964e-03
+194       -2.734910e-03
+195       -3.593373e-03
+196       -4.999314e-03
+197       -4.313924e-03
+198       -2.263153e-03
+199       -1.656497e-04
+200        9.373754e-04
+201        1.540257e-03
+202        2.551214e-03
+203        4.541796e-03
+204       -3.113285e-03
+205       -4.683745e-04
+206       -3.256042e-04
+207       -2.493443e-04
+208        7.279098e-05
+209        1.228999e-04
+210       -4.060112e-03
+211       -9.640169e-03
+212       -1.338294e-02
+213       -1.086450e-02
+214       -1.070703e-02
+215       -9.451540e-03
+216       -7.339089e-03
+217       -5.563297e-03
+218       -4.093922e-03
+219       -2.350536e-03
+220       -1.045697e-03
+221        1.756919e-03
+222        2.064432e-03
+223        2.193939e-03
+224        2.398578e-03
+225        2.700640e-03
+226        3.193350e-03
+227        4.225665e-03
+228        5.494479e-03
+attr(,"name")
+[1] "Regression coefficients for  2"
+```
+
+
+
+```
 print(PLS_Prediction$res$cal)
+```
+
+```
+PLS results (class plsres)
+
+Call:
+plsres(y.pred = yp, y.ref = y.ref, ncomp.selected = object$ncomp.selected, 
+    xdecomp = xdecomp, ydecomp = ydecomp)
+
+Major fields:
+$ncomp.selected - number of selected components
+$y.pred - array with predicted y values
+$y.ref - matrix with reference y values
+$rmse - root mean squared error
+$r2 - coefficient of determination
+$slope - slope for predicted vs. measured values
+$bias - bias for prediction vs. measured values
+$ydecomp - decomposition of y values (ldecomp object)
+$xdecomp - decomposition of x values (ldecomp object)
+```
+
 ```
 print(PLS_Prediction$res$cal$xdecomp)
 ```
+
 ```
+Results of data decomposition (class ldecomp).
+
+Major fields:
+$scores - matrix with score values
+$T2 - matrix with T2 distances
+$Q - matrix with Q residuals
+$ncomp.selected - selected number of components
+$expvar - explained variance for each component
+$cumexpvar - cumulative explained variance
 ```
+
 
 ```
 Predict_testset = predict(PLS_Prediction, testset_modelx, testset_modely)
+print(Predict_testset)
 ```
 
-print(Predict_testset)
+```
+PLS results (class plsres)
+
+Call:
+plsres(y.pred = yp, y.ref = y.ref, ncomp.selected = object$ncomp.selected, 
+    xdecomp = xdecomp, ydecomp = ydecomp)
+
+Major fields:
+$ncomp.selected - number of selected components
+$y.pred - array with predicted y values
+$y.ref - matrix with reference y values
+$rmse - root mean squared error
+$r2 - coefficient of determination
+$slope - slope for predicted vs. measured values
+$bias - bias for prediction vs. measured values
+$ydecomp - decomposition of y values (ldecomp object)
+$xdecomp - decomposition of x values (ldecomp object)
+```
 
 
+
+```
 print(Predict_testset$rmse)
+```
 
-**
+```
+        Comp 1       Comp 2       Comp 3       Comp 4       Comp 5       Comp 6
+2 0.0002910112 0.0002701696 0.0001421775 0.0001199389 8.691097e-05 6.184089e-05
+        Comp 7
+2 5.586857e-05
+attr(,"name")
+[1] "RMSE"
+attr(,"xaxis.name")
+[1] "Components"
+attr(,"yaxis.name")
+[1] "Predictors"
+```
+
+```
 PLS_Prediction1 = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, ncomp.selcrit = "min")
 show(PLS_Prediction1$ncomp.selected)
+```
+```
+[1] 7
+```
 
+```
 PLS_Prediction2 = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, ncomp.selcrit = "wold")
 show(PLS_Prediction2$ncomp.selected)
+```
 
+```
+[1] 7
+```
 
 #par(mfrow = c(1, 2))
+
+```
 plotRMSE(PLS_Prediction1)
+```
+![Rplot19](https://user-images.githubusercontent.com/68889345/131265583-cb7d2285-54d7-460f-a0ab-d9112b1a1b7b.png)
+
+
+```
 plotRMSE(PLS_Prediction2)
+```
+
+![Rplot20](https://user-images.githubusercontent.com/68889345/131265603-eb6bbe9b-1255-43d1-bcd9-6229f40419b3.png)
+
 
 #par(mfrow = c(1, 2))
-plotPredictions(PLS_Prediction1)
-plotPredictions(PLS_Prediction1, ncomp = 1)
 
+```
+plotPredictions(PLS_Prediction1)
+```
+![Rplot21](https://user-images.githubusercontent.com/68889345/131265694-5a3fd950-13c2-4075-a531-c98359ca855d.png)
+
+
+```
+plotPredictions(PLS_Prediction1, ncomp = 1)
+```
+![Rplot22](https://user-images.githubusercontent.com/68889345/131266274-54ba14ec-6491-4db8-9da0-2b01bbda73f5.png)
+
+
+```
 #par(mfrow = c(2, 2))
 plotPredictions(PLS_Prediction1$res$cal)
+```
+
+![Rplot23](https://user-images.githubusercontent.com/68889345/131265951-e013ebe4-b317-4077-b18c-ca90bedd38c4.png)
+
+```
 plotPredictions(PLS_Prediction1$res$cal, ncomp = 2)
+```
+
+![Rplot24](https://user-images.githubusercontent.com/68889345/131265980-e47495a9-4b4f-4af2-8ec0-068a9abd5429.png)
+
+```
 plotPredictions(PLS_Prediction1$res$cal, show.stat = TRUE)
+```
+
+![Rplot25](https://user-images.githubusercontent.com/68889345/131266001-e5624091-769b-4ede-8166-69eca5288b65.png)
+
+```
 plotPredictions(PLS_Prediction1$res$cal, ncomp = 2, show.stat = TRUE)
+```
+![Rplot28](https://user-images.githubusercontent.com/68889345/131266504-730d78cc-c993-4b94-a9fe-ea7bc6678759.png)
 
 
+```
 plot(PLS_Prediction1)
+```
 
+![Rplot26](https://user-images.githubusercontent.com/68889345/131266012-986801be-d808-4073-ad1b-65903359f333.png)
+
+```
 plot(PLS_Prediction2)
+```
+![Rplot27](https://user-images.githubusercontent.com/68889345/131266024-cbfafc73-471a-4102-8829-55100a2a893a.png)
 
+```
 ispectraSIMCA = seq(4, 1200, 4)
-#Xnc = SampleTEST[-idnx, -(c(1,2))]
-#ync = SampleTEST[-idnx, 2, drop = FALSE]
-#testset_modelx = SampleTEST[idnx, -(c(1,2))]
-#ynt = SampleTEST[idnx, 2, drop = FALSE]
+```
 
+```
 Calibpca_modelSimcax = SGspectra[ispectraSIMCA, 1:228]
 SGspectra01<-AllmSampleData$SpeciesID
-
 Calibpca_modelSimcay = ClassRef[ispectraSIMCA, 1]
-
 testset_modelSimcax = SGspectra[-ispectraSIMCA, 1:228]
 testset_modelSimcay = ClassRef[-ispectraSIMCA, 1]
+```
 
-
+```
 s.1090ACAA = SGspectra[1:100,1:228 ]
 s.1090ACLA = SGspectra[101:200,1:228 ]
 s.1090AALA = SGspectra[201:300,1:228 ]
@@ -936,13 +1352,27 @@ s.9010AALA = SGspectra[801:900,1:228 ]
 s.100AC = SGspectra[901:1000,1:228 ]
 s.100AA = SGspectra[1001:1100,1:228 ]
 s.100LA = SGspectra[1101:1200,1:228 ]
+```
 
-
-
+```
 Simca_pca_s.1090ACAA = simca(s.1090ACAA, "1090ACAA",ncomp = 3)
 summary(Simca_pca_s.1090ACAA)
+```
 
+```
+IMCA model for class '1090ACAA' summary
+Number of components: 3
+Type of limits: ddmoments
+Alpha: 0.05
+Gamma: 0.01
+    Expvar Cumexpvar TP FP TN FN Spec. Sens. Accuracy
+Cal   8.43     71.73 95  0  0  5    NA  0.95     0.95
+```
+
+```
 plot(Simca_pca_s.1090ACAA)
+```![Rplot29](https://user-images.githubusercontent.com/68889345/131266840-62d7124e-ea88-45d4-8dd7-57472210ac69.png)
 
-###################
+
+
 
