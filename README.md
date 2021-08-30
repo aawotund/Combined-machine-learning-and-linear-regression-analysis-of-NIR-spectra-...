@@ -738,17 +738,17 @@ attr(,"yaxis.name")
 par(mfrow = c(1, 1))
 plotRegcoeffs(PLS_Prediction)
 ```
-```
+
 ![Rplot15](https://user-images.githubusercontent.com/68889345/131247487-3d5ad63a-9dc1-456a-9611-0c04ea2b1be3.png)
-```
+
 
 ```
 plotRegcoeffs(PLS_Prediction, ncomp = 2)
 ```
 
-```
+
 ![Rplot16](https://user-images.githubusercontent.com/68889345/131247653-2e258294-bcb5-4f8d-a8b9-9dc58d3b7794.png)
-```
+
 
 
 ```
