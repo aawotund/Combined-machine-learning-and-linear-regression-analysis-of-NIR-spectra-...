@@ -394,17 +394,16 @@ par(mfrow = c(1, 1))
 mdaplot(Calibpca_model$res$cal$scores, type = "p",show.labels = FALSE, show.lines = c(0, 0))
 ```
 
-```
 ![Rplot13](https://user-images.githubusercontent.com/68889345/131245998-36ae9dfd-d171-4a65-b1af-85e652575a0d.png)
-```
+
 
 ```
 mdaplot(Calibpca_model$loadings, type = "p", show.labels = TRUE, show.lines = c(0, 0))
 ```
 
-```
+
 ![Rplot14](https://user-images.githubusercontent.com/68889345/131246156-1bd2d233-bd03-448b-b212-fc31882f6969.png)
-```
+
 
 ```
 ispectra = seq(4, 1200, 4)
