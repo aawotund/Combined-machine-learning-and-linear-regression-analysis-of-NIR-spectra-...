@@ -254,7 +254,7 @@ matplot(Wavelength,t(SGFsnvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (
 
 
 
-## PCA Analysis II
+## PCA Analysis
 
 *Split the treated data to two : Calibration set = Calib set and validation set = testset, then build PCA model*
 
