@@ -250,7 +250,6 @@ matplot(Wavelength,t(SGFsnvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (
 ![Rplot11](https://user-images.githubusercontent.com/68889345/131243047-72cc158e-a628-48b7-921a-c45e98ab2bf1.png)
 ![Rplot12](https://user-images.githubusercontent.com/68889345/131243048-8a2776e0-332d-44a3-88a9-b060d4633359.png)
 ![Rplot30MERGERD](https://user-images.githubusercontent.com/68889345/131542542-3dad2624-9762-4c50-b9b4-aa0075cd9db9.png)
-![Rplot30NEW](https://user-images.githubusercontent.com/68889345/131543087-f623e970-c164-44be-b89b-110c4697721b.png)
 
 
 
