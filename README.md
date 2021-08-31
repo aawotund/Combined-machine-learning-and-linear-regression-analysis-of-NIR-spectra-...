@@ -60,29 +60,29 @@ Below are the sample formulated matrixes consisting of Acetaminopen (*AC*), Lact
 
 ## Sample Keys 
 
-S1090ACAA : Sample Matrix Formulation 10 AC : 90 AA
+S1090ACAA *(Group 1)* : Sample Matrix Formulation 10 AC : 90 AA
 
-S1090ACLA : Sample Matrix Formulation 10 AC : 90 LA
+S1090ACLA *(Group 2)* : Sample Matrix Formulation 10 AC : 90 LA
 
-S1090AALA : Sample Matrix Formulation 10 AA : 90 LA
+S1090AALA *(Group 3)* : Sample Matrix Formulation 10 AA : 90 LA
 
-S5050ACAA : Sample Matrix Formulation 50 AC : 50 AA
+S5050ACAA *(Group 4)*: Sample Matrix Formulation 50 AC : 50 AA
 
-S5050ACLA : Sample Matrix Formulation 50 AC : 50 LA
+S5050ACLA *(Group 5)* : Sample Matrix Formulation 50 AC : 50 LA
 
-S5050AALA : Sample Matrix Formulation 50 AA : 50 LA
+S5050AALA *(Group 6)* : Sample Matrix Formulation 50 AA : 50 LA
 
-S9010ACAA : Sample Matrix Formulation 90 AC : 10 AA
+S9010ACAA *(Group 7)* : Sample Matrix Formulation 90 AC : 10 AA
 
-S9010ACLA : Sample Matrix Formulation 90 AC : 10 AA
+S9010ACLA *(Group 8)* : Sample Matrix Formulation 90 AC : 10 AA
 
-S9010AALA : Sample Matrix Formulation 90 AC : 10 AA
+S9010AALA *(Group 9)* : Sample Matrix Formulation 90 AC : 10 AA
 
-S100AC : Sample Matrix Formulation 100 AC 
+S100AC *(Group 10)* : Sample Matrix Formulation 100 AC 
 
-S100AA : Sample Matrix Formulation 1O0 AA
+S100AA *(Group 11)* : Sample Matrix Formulation 1O0 AA
 
-S100LA : Sample Matrix Formulation 100 LA
+S100LA *(Group 12)* : Sample Matrix Formulation 100 LA
 
 
 
