@@ -119,7 +119,7 @@ Below are the outcome of the treatment and what each denote:
 
 
 
-* - Apply SNV data pretreatment the spectra*
+- Apply SNV data pretreatment the spectra
 
 ```R
 snvspectra = prep.snv(RawSpectra)
