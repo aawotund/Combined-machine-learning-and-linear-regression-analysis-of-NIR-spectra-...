@@ -249,6 +249,8 @@ matplot(Wavelength,t(SGFsnvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (
 ![Rplot10](https://user-images.githubusercontent.com/68889345/131243044-55172da5-fd73-421a-8669-2d7ce1a18113.png)
 ![Rplot11](https://user-images.githubusercontent.com/68889345/131243047-72cc158e-a628-48b7-921a-c45e98ab2bf1.png)
 ![Rplot12](https://user-images.githubusercontent.com/68889345/131243048-8a2776e0-332d-44a3-88a9-b060d4633359.png)
+![Rplot30mergedsg](https://user-images.githubusercontent.com/68889345/131542235-4f6138aa-ba90-4599-8ac0-f006341ff1cf.png)
+
 
 ## PCA Analysis II
 
@@ -289,7 +291,7 @@ SamplesData.NIR.A4 7.488082 -12.38351 0.1403219  1.3298068
 SamplesData.NIR.A6 7.366403 -10.72870 1.8437984 -1.5862289
 ```
 
-```
+```R
 Predictnmodel = predict(Calibpca_model, testset)
 print(Predictnmodel) 
 ```
@@ -308,14 +310,14 @@ $cumexpvar - cumulative explained variance
 
 + PCA model with test set validation (we will use testset to validate) 
 
-```
+```R
 Calibpca_model = pca(calibset,7,scale = TRUE, x.test=testset, info = "PCA model")
 Calibpca_model = selectCompNum(Calibpca_model, 5)
 ```
 
 *Info for both result objects*
 
-```
+```R
 print(Calibpca_model$res$cal)
 ```
 
@@ -330,7 +332,7 @@ $expvar - explained variance for each component
 $cumexpvar - cumulative explained variance
 ```
 
-```
+```R
 print(Calibpca_model$res$test)
 ```
 
@@ -370,7 +372,7 @@ Comp 6     2.196   0.96     90.36 12  3
 Comp 7     1.852   0.81     91.17 12  4
 ```
 
-```
+```R
 var = data.frame(
   cal = Calibpca_model$res$cal$expvar,
   test = Calibpca_model$res$test$expvar)
@@ -758,7 +760,7 @@ plot(PLS_Prediction$coeffs, ncomp = 3, type = "b", show.labels = FALSE)
 ![Rplot17](https://user-images.githubusercontent.com/68889345/131247710-f1c3d27f-e427-400b-82d4-8c853800b39f.png)
 
 
-```R
+```
 plot(PLS_Prediction$coeffs, ncomp = 2)
 ```
 
