@@ -249,7 +249,8 @@ matplot(Wavelength,t(SGFsnvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (
 ![Rplot10](https://user-images.githubusercontent.com/68889345/131243044-55172da5-fd73-421a-8669-2d7ce1a18113.png)
 ![Rplot11](https://user-images.githubusercontent.com/68889345/131243047-72cc158e-a628-48b7-921a-c45e98ab2bf1.png)
 ![Rplot12](https://user-images.githubusercontent.com/68889345/131243048-8a2776e0-332d-44a3-88a9-b060d4633359.png)
-![Rplot30mergedsg](https://user-images.githubusercontent.com/68889345/131542235-4f6138aa-ba90-4599-8ac0-f006341ff1cf.png)
+![Rplot30MERGERD](https://user-images.githubusercontent.com/68889345/131542542-3dad2624-9762-4c50-b9b4-aa0075cd9db9.png)
+
 
 
 ## PCA Analysis II
