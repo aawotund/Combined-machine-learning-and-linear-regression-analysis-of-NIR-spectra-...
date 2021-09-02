@@ -2,7 +2,9 @@
 
 *Author: Olatunde Awotunde, MS (PHD in view @ University of Notre Dame) . Email: aawotund@nd.edu;olatundeawotunde1@gmail.com*
 
-This package uses functions developed from the following packages: 'pls, matplot, dplyr, csv, mdatools,stats,graphics,grDevices,methods,utils, plyr, caret,e1071'. 
+This package uses functions developed from the following packages:
+
+'pls, matplot, dplyr, csv, mdatools,stats,graphics,grDevices,methods,utils, plyr, caret,e1071'. 
 
 We thank the creators of these useful packages.
 
