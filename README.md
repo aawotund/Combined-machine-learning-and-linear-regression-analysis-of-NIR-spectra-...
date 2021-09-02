@@ -1004,7 +1004,7 @@ Summary for calibration results
 *Use the SIMCA model developed to predict testset*
 
 ```
-Simca_m.All_test = predict(Simca_m.All, testset_modelSimcax, testset_modelSimcay)
+Simca_m.All_test <- predict(Simca_m.All, testset_modelSimcax, testset_modelSimcay)
 plotPredictions(Simca_m.All_test)
 ```
 ![Rplot52](https://user-images.githubusercontent.com/68889345/131900739-c6c1ccc8-3d13-4fb0-9ef2-0bd74bff2481.png)
