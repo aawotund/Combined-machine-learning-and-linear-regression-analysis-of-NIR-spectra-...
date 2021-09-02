@@ -769,14 +769,6 @@ plotPredictions(PLS_Prediction1)
 
 
 
-
-
-
-
-
-
-
-
 ```
 plotPredictions(PLS_Prediction1, ncomp = 1)
 ```
@@ -868,8 +860,247 @@ plot(Simca_pca_s.1090ACAA)
 ```
 
 ![Rplot46](https://user-images.githubusercontent.com/68889345/131889302-1da99cde-8784-44bb-ae41-3dd07e2ac8e9.png)
+
+
+```
+plotSensitivity(Simca_pca_s.1090ACAA)
+plotMisclassified(Simca_pca_s.1090ACAA)
+plotPredictions(Simca_pca_s.1090ACAA$res$cal, main = "Predictions (cal)")
+plotPredictions(Simca_pca_s.1090ACAA$res$cv, main = "Predictions (cv)")
+```
 ![Rplot47](https://user-images.githubusercontent.com/68889345/131889304-8ccca5da-b041-4f6e-bdf9-ac609f9664e9.png)
+![Rplot48](https://user-images.githubusercontent.com/68889345/131892544-c595c4db-a64a-4da7-bbf2-8cafcf3317f0.png)
+![Rplot49](https://user-images.githubusercontent.com/68889345/131892546-7bab4f35-5bab-40c4-a83c-55c0b156de95.png)
+![Rplot50](https://user-images.githubusercontent.com/68889345/131892548-02305b3b-9deb-4ad2-b438-9ea519657e70.png)
+![Rplot51](https://user-images.githubusercontent.com/68889345/131892549-3cd68c58-8764-4561-a9b1-89140c03f9df.png)
+
+
+```
+summary(Simca_pca_s.1090ACAA)
+```
+
+```
+##############################
+SIMCA model for class '1090ACAA' summary
+
+
+Number of components: 3
+Type of limits: ddmoments
+Alpha: 0.05
+Gamma: 0.01
+
+    Expvar Cumexpvar TP FP TN FN Spec. Sens. Accuracy
+Cal   8.43     71.73 95  0  0  5    NA  0.95     0.95
+Cv      NA        NA 94  0  0  6    NA  0.94     0.94
+##############################
+```
+*Predict the testset using the SIMCA model*
+
+```
+Predict_testsetSimca = predict(Simca_pca_s.1090ACAA, testset_modelSimcax, testset_modelSimcay)
+summary(Predict_testsetSimca)
+```
+
+
+```
+##############################
+Summary for SIMCA one-class classification result
+
+Class name: 1090ACAA
+Number of selected components: 3
+
+       Expvar Cumexpvar TP FP  TN FN Spec. Sens. Accuracy
+Comp 1  18.71     18.71 72 14 811  3 0.983  0.96    0.981
+Comp 2  12.31     31.01 72  0 825  3 1.000  0.96    0.997
+Comp 3  15.50     46.51 72  0 825  3 1.000  0.96    0.997
+##############################
+```
+
+*Multi-class SIMCA of 1200 spectra containing 12 groups/categories listed above*
+
+```
+X.1090ACAA = SPECTRAM2[1:100,3:230]
+m.1090ACAA = simca(s.1090ACAA, "1090ACAA", 12, alpha = 0.01)
+m.1090ACAA = selectCompNum(m.1090ACAA, 1)
+
+X.1090ACLA = SPECTRAM2[101:200,3:230 ]
+m.1090ACLA = simca(s.1090ACLA, "1090ACLA", 12, alpha = 0.01)
+m.1090ACLA = selectCompNum(m.1090ACLA, 2)
+
+X.1090AALA = SPECTRAM2[201:300,3:230 ]
+m.1090AALA = simca(s.1090AALA, "1090AALA", 12)
+m.1090AALA = selectCompNum(m.1090AALA, 3)
+
+X.5050ACAA = SPECTRAM2[301:400,3:230 ]
+m.5050ACAA = simca(s.5050ACAA, "5050ACAA", 12)
+m.5050ACAA = selectCompNum(m.5050ACAA, 4)
+
+X.5050ACLA = SPECTRAM2[401:500,3:230 ]
+m.5050ACLA = simca(s.5050ACLA, "5050ACLA", 12)
+m.5050ACLA = selectCompNum(m.5050ACLA, 5)
+
+X.5050AALA = SPECTRAM2[501:600,3:230 ]
+m.5050AALA = simca(s.5050AALA, "5050AALA", 12)
+m.5050AALA = selectCompNum(m.5050AALA, 6)
+
+X.9010ACAA = SPECTRAM2[601:700,3:230 ]
+m.9010ACAA = simca(s.9010ACAA, "9010ACAA", 12)
+m.9010ACAA = selectCompNum(m.9010ACAA, 7)
+
+X.9010ACLA = SPECTRAM2[701:800,3:230 ]
+m.9010ACLA = simca(s.9010ACLA, "9010ACLA", 12)
+m.9010ACLA = selectCompNum(m.9010ACLA, 8)
+
+X.9010AALA = SPECTRAM2[801:900,3:230 ]
+m.9010AALA = simca(s.9010AALA, "9010AALA", 12)
+m.9010AALA = selectCompNum(m.9010AALA, 9)
+
+X.100AC = SPECTRAM2[901:1000,3:230 ]
+m.100AC = simca(s.100AC, "100AC", 12)
+m.100AC = selectCompNum(m.100AC, 10)
+
+X.100AA = SPECTRAM2[1001:1100,3:230 ]
+m.100AA = simca(s.100AA, "100AA", 12)
+m.100AA = selectCompNum(m.100AA, 11)
+
+X.100LA = SPECTRAM2[1101:1200,3:230 ]
+m.100LA = simca(s.100LA, "100LA", 12)
+m.100LA = selectCompNum(m.100LA, 12)
+```
+
+*Apply SIMCAM
+
+```
+Simca_m.All = simcam(list(m.1090ACAA, m.1090ACLA, m.1090AALA,m.5050ACAA,m.5050ACLA,
+                          m.5050AALA,m.9010ACAA,m.9010ACLA,m.9010AALA,m.100AC,m.100AA,
+                          m.100LA))
+summary(Simca_m.All)
+```
+
+```
+##############################
+SIMCA multiple classes classification (class simcam)
+
+Number of classes: 12
+Info: 
+
+Summary for calibration results
+         Ncomp TP  FP   TN FN Spec. Sens. Accuracy
+1090ACAA     1 97  49 1051  3 0.955  0.97    0.957
+1090ACLA     2 97 124  976  3 0.887  0.97    0.894
+1090AALA     3 94  85 1015  6 0.923  0.94    0.924
+5050ACAA     4 93   0 1100  7 1.000  0.93    0.994
+5050ACLA     5 96   0 1100  4 1.000  0.96    0.997
+5050AALA     6 95  45 1055  5 0.959  0.95    0.958
+9010ACAA     7 96   0 1100  4 1.000  0.96    0.997
+9010ACLA     8 96   0 1100  4 1.000  0.96    0.997
+9010AALA     9 98   1 1099  2 0.999  0.98    0.998
+100AC       10 96   0 1100  4 1.000  0.96    0.997
+100AA       11 95   0 1100  5 1.000  0.95    0.996
+100LA       12 93 102  998  7 0.907  0.93    0.909
+##############################
+```
+
+
+*Use the SIMCA model developed to predict testset*
+
+```
+Simca_m.All_test = predict(Simca_m.All, testset_modelSimcax, testset_modelSimcay)
+plotPredictions(Simca_m.All_test)
+```
+![Rplot52](https://user-images.githubusercontent.com/68889345/131900739-c6c1ccc8-3d13-4fb0-9ef2-0bd74bff2481.png)
+
+
+```
+show(Simca_m.All_test$c.pred[20:30, 1, ])
+
+```
+
+```
+##############################
+                  1090ACAA 1090ACLA 1090AALA 5050ACAA 5050ACLA 5050AALA
+SamplesData.NIR.A26        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A27        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A29        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A30        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A31        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A33        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A34        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A35        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A37        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A38        1       -1       -1       -1       -1       -1
+SamplesData.NIR.A39        1       -1       -1       -1       -1       -1
+                    9010ACAA 9010ACLA 9010AALA 100AC 100AA 100LA
+SamplesData.NIR.A26       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A27       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A29       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A30       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A31       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A33       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A34       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A35       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A37       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A38       -1       -1       -1    -1    -1    -1
+SamplesData.NIR.A39       -1       -1       -1    -1    -1    -1
+##############################
+```
+
+```
+show(getConfusionMatrix(Simca_m.All_test))
+```
+
+```
+##############################
+      1090ACAA 1090ACLA 1090AALA 5050ACAA 5050ACLA 5050AALA 9010ACAA 9010ACLA
+1090ACAA       73        0        0        0        0        0        0        0
+1090ACLA        0       74       49        0        0        5        0        0
+1090AALA        0       53       70        0        0       30        0        0
+5050ACAA        0        0        0       70        0        0        0        0
+5050ACLA        0        0        0        0       72        0        0        0
+5050AALA        0        4        1        0        0       70        0        0
+9010ACAA        0        0        0        0        0        0       72        0
+9010ACLA        0        0        0        0        0        0        0       72
+9010AALA       15        0        0        0        0        0        0        0
+100AC           0        0        0        0        0        0        0        0
+100AA          21        0        0        0        0        0        0        0
+100LA           0       40       17        0        0        0        0        0
+         9010AALA 100AC 100AA 100LA None
+1090ACAA        0     0     0     0    2
+1090ACLA        0     0     0    42    1
+1090AALA        0     0     0    32    0
+5050ACAA        0     0     0     0    5
+5050ACLA        0     0     0     0    3
+5050AALA        0     0     0     0    5
+9010ACAA        0     0     0     0    3
+9010ACLA        0     0     0     0    3
+9010AALA       73     0     0     0    2
+100AC           0    72     0     0    3
+100AA           1     0    71     0    3
+100LA           0     0     0    74    1
+##############################
+```
+
+
+```
+plotCooman(Simca_m.All, c(1, 3), show.labels = FALSE)
+plotCooman(Simca_m.All, c(7, 3), show.labels = FALSE)
+```
+![Rplot53](https://user-images.githubusercontent.com/68889345/131901962-b4696ddf-62ab-4e11-9543-2be357d7838f.png)
+![Rplot54](https://user-images.githubusercontent.com/68889345/131901963-2f9354d3-662b-4147-9ed6-1c3476e7559a.png)
+
+## SVM - REGRESSION
+
+ispectraSVM  <- sample(1:nrow(SPECTRAM2),as.integer(0.7*nrow(SPECTRAM2))) ##meaning of 0.7
+Calibpca_modelsvmy = SPECTRAM2[ispectraSVM, 2]
+testset_modelsvmy= SPECTRAM2[-ispectraSVM, 2]
+
+Calibpca_modelsvmx<- SPECTRAM2[ispectraSVM,3:230]
+testset_modelsvmx <- SPECTRAM2[-ispectraSVM,3:230 ]
+testset_modelsvm2x <- SPECTRAM2[-ispectraSVM,2:230 ]
 
 
 
+SVM_R_AC <- svm(Calibpca_modelsvmy~.,Calibpca_modelsvmx)
 
+
+predict_Molarratio <- predict(SVM_R_AC, testset_modelsvmx)
