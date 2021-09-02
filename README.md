@@ -4,7 +4,7 @@
 
 This package uses functions developed from the following packages:
 
-`pls, matplot, dplyr, csv, mdatools,stats,graphics,grDevices,methods,utils, plyr, caret,e1071`. 
+`pls`, `matplot`, `dplyr`, `csv`, `mdatools`,`stats`,`graphics`,`grDevices`,`methods`,`utils`, `plyr`, `caret`,`e1071`. 
 
 We thank the creators of these useful packages.
 
