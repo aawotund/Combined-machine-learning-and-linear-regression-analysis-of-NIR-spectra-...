@@ -867,7 +867,7 @@ plotMisclassified(Simca_pca_s.1090ACAA)
 plotPredictions(Simca_pca_s.1090ACAA$res$cal, main = "Predictions (cal)")
 plotPredictions(Simca_pca_s.1090ACAA$res$cv, main = "Predictions (cv)")
 ```
-![Rplot47](https://user-images.githubusercontent.com/68889345/131889304-8ccca5da-b041-4f6e-bdf9-ac609f9664e9.png)
+
 ![Rplot48](https://user-images.githubusercontent.com/68889345/131892544-c595c4db-a64a-4da7-bbf2-8cafcf3317f0.png)
 ![Rplot49](https://user-images.githubusercontent.com/68889345/131892546-7bab4f35-5bab-40c4-a83c-55c0b156de95.png)
 ![Rplot50](https://user-images.githubusercontent.com/68889345/131892548-02305b3b-9deb-4ad2-b438-9ea519657e70.png)
