@@ -147,7 +147,7 @@ Below are the outcome of the treatment and what each denote:
 - Apply SNV data pretreatment the spectra
 
 ```R
-snvspectra = prep.snv(RawSpectra)
+snvspectra <- prep.snv(RawSpectra)
 ```
 - Split the snv treated spectra to the 12 different categories
 
@@ -248,7 +248,7 @@ legend("topleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex = 
 *Apply SG filter for smoothing and take a second derivative*
 
 ```R
-SGspectra = prep.savgol(snvspectra, width = 17, porder = 2, dorder = 2)
+SGspectra <- prep.savgol(snvspectra, width = 17, porder = 2, dorder = 2)
 ```
 
 - Split the SG filter treated spectra to the 12 different categories
@@ -338,12 +338,12 @@ legend("bottomleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex
 *Split the treated data to two : Calibration set = Calib set and validation set = testset, then build PCA model*
 
 ```R
-ispect = seq(1, 1200, 4)
-calibset = SGspectra[-ispect, ]
-testset = SGspectra[ispect, ]
+ispect <- seq(1, 1200, 4)
+calibset <- SGspectra[-ispect, ]
+testset <- SGspectra[ispect, ]
 
-Calibpca_model = pca(calibset, 10, scale = TRUE, info = "ACAALA PCA model")
-Calibpca_model= selectCompNum(Calibpca_model, 5)
+Calibpca_model <- pca(calibset, 10, scale = TRUE, info = "ACAALA PCA model")
+Calibpca_model<- selectCompNum(Calibpca_model, 5)
 ```
 + Access the loadings and the scores
 
@@ -373,7 +373,7 @@ SamplesData.NIR.A6 7.366403 -10.72870 1.8437984 -1.5862289
 ```
 
 ```R
-Predictnmodel = predict(Calibpca_model, testset)
+Predictnmodel <- predict(Calibpca_model, testset)
 print(Predictnmodel) 
 ```
 
@@ -392,8 +392,8 @@ $cumexpvar - cumulative explained variance
 + PCA model with test set validation (we will use testset to validate) 
 
 ```R
-Calibpca_model = pca(calibset,7,scale = TRUE, x.test=testset, info = "PCA model")
-Calibpca_model = selectCompNum(Calibpca_model, 5)
+Calibpca_model <- pca(calibset,7,scale = TRUE, x.test=testset, info = "PCA model")
+Calibpca_model <- selectCompNum(Calibpca_model, 5)
 ```
 
 *Info for both result objects*
@@ -454,9 +454,9 @@ Comp 7     1.852   0.81     91.17 12  4
 ```
 
 ```R
-var = data.frame(
-  cal = Calibpca_model$res$cal$expvar,
-  test = Calibpca_model$res$test$expvar)
+var <- data.frame(
+  cal <- Calibpca_model$res$cal$expvar,
+  test <- Calibpca_model$res$test$expvar)
 show(round(var, 1))
 ```
 
@@ -501,8 +501,8 @@ testset_modely = SGspectra[ispectra, 2, drop = FALSE]
 ```
 
 ```
-PLS_Prediction = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, info = "Conc. prediction model")
-PLS_Prediction = selectCompNum(PLS_Prediction, 3)
+PLS_Prediction <- pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, info = "Conc. prediction model")
+PLS_Prediction <- selectCompNum(PLS_Prediction, 3)
 ```
 
 ```
@@ -675,7 +675,7 @@ $cumexpvar - cumulative explained variance
 
 
 ```
-Predict_testset = predict(PLS_Prediction, testset_modelx, testset_modely)
+Predict_testset <- predict(PLS_Prediction, testset_modelx, testset_modely)
 print(Predict_testset)
 ```
 
@@ -721,7 +721,7 @@ attr(,"yaxis.name")
 ```
 
 ```
-PLS_Prediction1 = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, ncomp.selcrit = "min")
+PLS_Prediction1 <- pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, ncomp.selcrit = "min")
 show(PLS_Prediction1$ncomp.selected)
 ```
 ```
@@ -731,7 +731,7 @@ show(PLS_Prediction1$ncomp.selected)
 ```
 
 ```
-PLS_Prediction2 = pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, ncomp.selcrit = "wold")
+PLS_Prediction2 <- pls(Calibpca_modelx, Calibpca_modely, 7, scale = TRUE, cv = 1, ncomp.selcrit = "wold")
 show(PLS_Prediction2$ncomp.selected)
 ```
 
@@ -817,30 +817,30 @@ ispectraSIMCA = seq(4, 1200, 4)
 ```
 
 ```
-Calibpca_modelSimcax = SGspectra[ispectraSIMCA, 1:228]
+Calibpca_modelSimcax <- SGspectra[ispectraSIMCA, 1:228]
 SGspectra01<-AllmSampleData$SpeciesID
-Calibpca_modelSimcay = ClassRef[ispectraSIMCA, 1]
-testset_modelSimcax = SGspectra[-ispectraSIMCA, 1:228]
-testset_modelSimcay = ClassRef[-ispectraSIMCA, 1]
+Calibpca_modelSimcay <- ClassRef[ispectraSIMCA, 1]
+testset_modelSimcax <- SGspectra[-ispectraSIMCA, 1:228]
+testset_modelSimcay <- ClassRef[-ispectraSIMCA, 1]
 ```
 
 ```
-s.1090ACAA = SGspectra[1:100,1:228 ]
-s.1090ACLA = SGspectra[101:200,1:228 ]
-s.1090AALA = SGspectra[201:300,1:228 ]
-s.5050ACAA = SGspectra[301:400,1:228 ]
-s.5050ACLA = SGspectra[401:500,1:228 ]
-s.5050AALA = SGspectra[501:600,1:228 ]
-s.9010ACAA = SGspectra[601:700,1:228 ]
-s.9010ACLA = SGspectra[701:800,1:228 ]
-s.9010AALA = SGspectra[801:900,1:228 ]
-s.100AC = SGspectra[901:1000,1:228 ]
-s.100AA = SGspectra[1001:1100,1:228 ]
-s.100LA = SGspectra[1101:1200,1:228 ]
+s.1090ACAA <- SGspectra[1:100,1:228 ]
+s.1090ACLA <- SGspectra[101:200,1:228 ]
+s.1090AALA <- SGspectra[201:300,1:228 ]
+s.5050ACAA <- SGspectra[301:400,1:228 ]
+s.5050ACLA <- SGspectra[401:500,1:228 ]
+s.5050AALA <- SGspectra[501:600,1:228 ]
+s.9010ACAA <- SGspectra[601:700,1:228 ]
+s.9010ACLA <- SGspectra[701:800,1:228 ]
+s.9010AALA <- SGspectra[801:900,1:228 ]
+s.100AC <- SGspectra[901:1000,1:228 ]
+s.100AA <- SGspectra[1001:1100,1:228 ]
+s.100LA <- SGspectra[1101:1200,1:228 ]
 ```
 
 ```
-Simca_pca_s.1090ACAA = simca(s.1090ACAA, "1090ACAA",ncomp = 3)
+Simca_pca_s.1090ACAA <- simca(s.1090ACAA, "1090ACAA",ncomp = 3)
 summary(Simca_pca_s.1090ACAA)
 ```
 
@@ -918,59 +918,59 @@ Comp 3  15.50     46.51 72  0 825  3 1.000  0.96    0.997
 *Multi-class SIMCA of 1200 spectra containing 12 groups/categories listed above*
 
 ```
-X.1090ACAA = SPECTRAM2[1:100,3:230]
-m.1090ACAA = simca(s.1090ACAA, "1090ACAA", 12, alpha = 0.01)
-m.1090ACAA = selectCompNum(m.1090ACAA, 1)
+X.1090ACAA <- SPECTRAM2[1:100,3:230]
+m.1090ACAA <- simca(s.1090ACAA, "1090ACAA", 12, alpha = 0.01)
+m.1090ACAA <- selectCompNum(m.1090ACAA, 1)
 
-X.1090ACLA = SPECTRAM2[101:200,3:230 ]
-m.1090ACLA = simca(s.1090ACLA, "1090ACLA", 12, alpha = 0.01)
-m.1090ACLA = selectCompNum(m.1090ACLA, 2)
+X.1090ACLA <- SPECTRAM2[101:200,3:230 ]
+m.1090ACLA <- simca(s.1090ACLA, "1090ACLA", 12, alpha = 0.01)
+m.1090ACLA <- selectCompNum(m.1090ACLA, 2)
 
-X.1090AALA = SPECTRAM2[201:300,3:230 ]
-m.1090AALA = simca(s.1090AALA, "1090AALA", 12)
-m.1090AALA = selectCompNum(m.1090AALA, 3)
+X.1090AALA <- SPECTRAM2[201:300,3:230 ]
+m.1090AALA <- simca(s.1090AALA, "1090AALA", 12)
+m.1090AALA <- selectCompNum(m.1090AALA, 3)
 
-X.5050ACAA = SPECTRAM2[301:400,3:230 ]
-m.5050ACAA = simca(s.5050ACAA, "5050ACAA", 12)
-m.5050ACAA = selectCompNum(m.5050ACAA, 4)
+X.5050ACAA <- SPECTRAM2[301:400,3:230 ]
+m.5050ACAA <- simca(s.5050ACAA, "5050ACAA", 12)
+m.5050ACAA <- selectCompNum(m.5050ACAA, 4)
 
-X.5050ACLA = SPECTRAM2[401:500,3:230 ]
-m.5050ACLA = simca(s.5050ACLA, "5050ACLA", 12)
-m.5050ACLA = selectCompNum(m.5050ACLA, 5)
+X.5050ACLA <- SPECTRAM2[401:500,3:230 ]
+m.5050ACLA <- simca(s.5050ACLA, "5050ACLA", 12)
+m.5050ACLA <- selectCompNum(m.5050ACLA, 5)
 
-X.5050AALA = SPECTRAM2[501:600,3:230 ]
-m.5050AALA = simca(s.5050AALA, "5050AALA", 12)
-m.5050AALA = selectCompNum(m.5050AALA, 6)
+X.5050AALA <- SPECTRAM2[501:600,3:230 ]
+m.5050AALA <- simca(s.5050AALA, "5050AALA", 12)
+m.5050AALA <- selectCompNum(m.5050AALA, 6)
 
-X.9010ACAA = SPECTRAM2[601:700,3:230 ]
-m.9010ACAA = simca(s.9010ACAA, "9010ACAA", 12)
-m.9010ACAA = selectCompNum(m.9010ACAA, 7)
+X.9010ACAA <- SPECTRAM2[601:700,3:230 ]
+m.9010ACAA <- simca(s.9010ACAA, "9010ACAA", 12)
+m.9010ACAA <- selectCompNum(m.9010ACAA, 7)
 
-X.9010ACLA = SPECTRAM2[701:800,3:230 ]
-m.9010ACLA = simca(s.9010ACLA, "9010ACLA", 12)
-m.9010ACLA = selectCompNum(m.9010ACLA, 8)
+X.9010ACLA <- SPECTRAM2[701:800,3:230 ]
+m.9010ACLA <- simca(s.9010ACLA, "9010ACLA", 12)
+m.9010ACLA <- selectCompNum(m.9010ACLA, 8)
 
-X.9010AALA = SPECTRAM2[801:900,3:230 ]
-m.9010AALA = simca(s.9010AALA, "9010AALA", 12)
-m.9010AALA = selectCompNum(m.9010AALA, 9)
+X.9010AALA <- SPECTRAM2[801:900,3:230 ]
+m.9010AALA <- simca(s.9010AALA, "9010AALA", 12)
+m.9010AALA <- selectCompNum(m.9010AALA, 9)
 
-X.100AC = SPECTRAM2[901:1000,3:230 ]
-m.100AC = simca(s.100AC, "100AC", 12)
-m.100AC = selectCompNum(m.100AC, 10)
+X.100AC <- SPECTRAM2[901:1000,3:230 ]
+m.100AC <- simca(s.100AC, "100AC", 12)
+m.100AC <- selectCompNum(m.100AC, 10)
 
-X.100AA = SPECTRAM2[1001:1100,3:230 ]
-m.100AA = simca(s.100AA, "100AA", 12)
-m.100AA = selectCompNum(m.100AA, 11)
+X.100AA <- SPECTRAM2[1001:1100,3:230 ]
+m.100AA <- simca(s.100AA, "100AA", 12)
+m.100AA <- selectCompNum(m.100AA, 11)
 
-X.100LA = SPECTRAM2[1101:1200,3:230 ]
-m.100LA = simca(s.100LA, "100LA", 12)
-m.100LA = selectCompNum(m.100LA, 12)
+X.100LA <- SPECTRAM2[1101:1200,3:230 ]
+m.100LA <- simca(s.100LA, "100LA", 12)
+m.100LA <- selectCompNum(m.100LA, 12)
 ```
 
 *Apply SIMCAM
 
 ```
-Simca_m.All = simcam(list(m.1090ACAA, m.1090ACLA, m.1090AALA,m.5050ACAA,m.5050ACLA,
+Simca_m.All <- simcam(list(m.1090ACAA, m.1090ACLA, m.1090AALA,m.5050ACAA,m.5050ACLA,
                           m.5050AALA,m.9010ACAA,m.9010ACLA,m.9010AALA,m.100AC,m.100AA,
                           m.100LA))
 summary(Simca_m.All)
@@ -1095,9 +1095,9 @@ plotCooman(Simca_m.All, c(7, 3), show.labels = FALSE)
 
 ```
 ispectraSVM  <- sample(1:nrow(SPECTRAsg2),as.integer(0.7*nrow(SPECTRAsg2))) 
-Calibpca_modelsvmy = SPECTRAsg2[ispectraSVM, 2]
-testset_modelsvmy= SPECTRAsg2[-ispectraSVM, 2]
-Calibpca_modelsvmx<- SPECTRAsg2[ispectraSVM,3:230]
+Calibpca_modelsvmy <- SPECTRAsg2[ispectraSVM, 2]
+testset_modelsvmy <- SPECTRAsg2[-ispectraSVM, 2]
+Calibpca_modelsvmx <- SPECTRAsg2[ispectraSVM,3:230]
 testset_modelsvmx <- SPECTRAsg2[-ispectraSVM,3:230 ]
 testset_modelsvm2x <- SPECTRAsg2[-ispectraSVM,2:230 ]
 ```
@@ -1120,8 +1120,8 @@ predict_Molarratio <- predict(SVM_R_AC, testset_modelsvmx)
 *Identify the classification criteria/column, split to calibration and validation set*
 
 ```
-Calibpca_modelsvmcy = SPECTRAsg2[ispectraSVM, 1]
-testset_modelsvmcy= SPECTRAsg2[-ispectraSVM, 1]
+Calibpca_modelsvmcy <- SPECTRAsg2[ispectraSVM, 1]
+testset_modelsvmcy <- SPECTRAsg2[-ispectraSVM, 1]
 ```
 *Perform supprt vector analysis for model building*
 
