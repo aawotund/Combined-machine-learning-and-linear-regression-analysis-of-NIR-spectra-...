@@ -493,11 +493,11 @@ mdaplot(Calibpca_model$loadings, type = "p", show.labels = TRUE, show.lines = c(
 ![Rplot31B](https://user-images.githubusercontent.com/68889345/131885758-7278c16a-8682-4fe6-acdd-8517a893ec5a.png)
 
 ```
-ispectra = seq(4, 1200, 4)
-Calibpca_modelx = SGspectra[-ispectra, -(c(1,2))]
-Calibpca_modely= SGspectra[-ispectra, 2, drop = FALSE]
-testset_modelx= SGspectra[ispectra, -(c(1,2))]
-testset_modely = SGspectra[ispectra, 2, drop = FALSE]
+ispectra <- seq(4, 1200, 4)
+Calibpca_modelx <- SGspectra[-ispectra, -(c(1,2))]
+Calibpca_modely <- SGspectra[-ispectra, 2, drop = FALSE]
+testset_modelx <- SGspectra[ispectra, -(c(1,2))]
+testset_modely <- SGspectra[ispectra, 2, drop = FALSE]
 ```
 
 ```
