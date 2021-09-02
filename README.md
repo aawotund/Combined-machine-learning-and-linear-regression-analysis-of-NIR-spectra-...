@@ -1088,19 +1088,65 @@ plotCooman(Simca_m.All, c(7, 3), show.labels = FALSE)
 ![Rplot53](https://user-images.githubusercontent.com/68889345/131901962-b4696ddf-62ab-4e11-9543-2be357d7838f.png)
 ![Rplot54](https://user-images.githubusercontent.com/68889345/131901963-2f9354d3-662b-4147-9ed6-1c3476e7559a.png)
 
+
+
 ## SVM - REGRESSION
 
-ispectraSVM  <- sample(1:nrow(SPECTRAM2),as.integer(0.7*nrow(SPECTRAM2))) ##meaning of 0.7
-Calibpca_modelsvmy = SPECTRAM2[ispectraSVM, 2]
-testset_modelsvmy= SPECTRAM2[-ispectraSVM, 2]
+*Split data to test and calibration set*
 
-Calibpca_modelsvmx<- SPECTRAM2[ispectraSVM,3:230]
-testset_modelsvmx <- SPECTRAM2[-ispectraSVM,3:230 ]
-testset_modelsvm2x <- SPECTRAM2[-ispectraSVM,2:230 ]
+```
+ispectraSVM  <- sample(1:nrow(SPECTRAsg2),as.integer(0.7*nrow(SPECTRAsg2))) 
+Calibpca_modelsvmy = SPECTRAsg2[ispectraSVM, 2]
+testset_modelsvmy= SPECTRAsg2[-ispectraSVM, 2]
+Calibpca_modelsvmx<- SPECTRAsg2[ispectraSVM,3:230]
+testset_modelsvmx <- SPECTRAsg2[-ispectraSVM,3:230 ]
+testset_modelsvm2x <- SPECTRAsg2[-ispectraSVM,2:230 ]
+```
+*Perform supprt vector analysis for model building*
 
-
-
+```
 SVM_R_AC <- svm(Calibpca_modelsvmy~.,Calibpca_modelsvmx)
+```
 
+*Perform supprt vector analysis for model building*
 
+```
 predict_Molarratio <- predict(SVM_R_AC, testset_modelsvmx)
+```
+
+
+
+## SVM - CLASSIFICATION
+
+*Identify the classification criteria/column, split to calibration and validation set*
+
+```
+Calibpca_modelsvmcy = SPECTRAsg2[ispectraSVM, 1]
+testset_modelsvmcy= SPECTRAsg2[-ispectraSVM, 1]
+```
+*Perform supprt vector analysis for model building*
+
+```
+SVM_C_AC <- svm(as.factor(Calibpca_modelsvmcy)~.,data = Calibpca_modelsvmx, type="C-classification", kernal="radial",gamma=0.1, cost=10)
+```
+
+*Perform supprt vector analysis for model building*
+
+```
+predict_Class <- predict(SVM_C_AC, testset_modelsvmx)
+```
+
+```
+summary(predict_Class)
+```
+
+##############################
+```
+ 100AA    100AC    100LA 1090AALA 1090ACAA 1090ACLA 5050AALA 5050ACAA 5050ACLA 
+      22       93       29       28       28       22       19       24       26 
+9010AALA 9010ACAA 9010ACLA 
+      20       26       23 
+##############################
+```
+
+
