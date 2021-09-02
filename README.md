@@ -701,7 +701,6 @@ $xdecomp - decomposition of x values (ldecomp object)
 ```
 
 
-
 ```
 print(Predict_testset$rmse)
 ```
@@ -1140,8 +1139,8 @@ predict_Class <- predict(SVM_C_AC, testset_modelsvmx)
 summary(predict_Class)
 ```
 
-##############################
 ```
+##############################
  100AA    100AC    100LA 1090AALA 1090ACAA 1090ACLA 5050AALA 5050ACAA 5050ACLA 
       22       93       29       28       28       22       19       24       26 
 9010AALA 9010ACAA 9010ACLA 
