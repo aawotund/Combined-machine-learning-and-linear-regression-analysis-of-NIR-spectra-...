@@ -116,7 +116,8 @@ legend("topleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex = 
 
 
 ```
-![Rplot3001](https://user-images.githubusercontent.com/68889345/131867920-6e7ef98e-0ca4-4c32-b3a3-3a3c6dd095d4.png
+
+![Rplot3001](https://user-images.githubusercontent.com/68889345/131867920-6e7ef98e-0ca4-4c32-b3a3-3a3c6dd095d4.png)
 ![Rplot3002](https://user-images.githubusercontent.com/68889345/131867951-075b8f38-b278-43f0-9059-6836b2586c6c.png)
 ![Rplot3003](https://user-images.githubusercontent.com/68889345/131867950-c7fc28c4-0036-4d88-b70c-4c08ac6a5c95.png)
 ![Rplot3004](https://user-images.githubusercontent.com/68889345/131867947-4e61476c-8996-4692-9826-b69c7d546105.png)
