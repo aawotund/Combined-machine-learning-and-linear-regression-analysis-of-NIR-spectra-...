@@ -3,8 +3,9 @@
 *Author: Olatunde Awotunde, MS (PHD in view @ University of Notre Dame) . Email: aawotund@nd.edu;olatundeawotunde1@gmail.com*
 
 This package uses functions developed from the following packages: 'pls, prospectr, dplyr, reshape2, mdatools, ggpubr, factoextra, FactoMineR, readxl, plyr, caret,
+e1071'. 
 
-e1071'. We thank the creators of these useful packages.
+We thank the creators of these useful packages.
 
 ## Warning:
 
