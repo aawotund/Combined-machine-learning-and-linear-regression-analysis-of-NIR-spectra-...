@@ -2,18 +2,23 @@
 
 *Author: Olatunde Awotunde, MS (PHD in view @ University of Notre Dame) . Email: aawotund@nd.edu;olatundeawotunde1@gmail.com*
 
-This package uses functions developed from the following packages: 'pls, prospectr, dplyr, reshape2, mdatools, ggpubr, factoextra, FactoMineR, readxl, plyr, caret,
-e1071'. 
+This package uses functions developed from the following packages: 'pls, matplot, dplyr, csv, mdatools,stats,graphics,grDevices,methods,utils, plyr, caret,e1071'. 
 
 We thank the creators of these useful packages.
+
+## Goal
+
++ Develop a database to identify substandard pharmaceutical drugs as well as illicit drugs
+
++ Develop a user friendly app for every day use of endusers, forensic scientist and law enforcement
 
 ## Warning:
 
 The data structure must be in Dataframe format. Use the following command to transform it into a dataframe: as.data.frame().
 
-The last column must contain the response variable in `factor` or `character` format.
+The column must containing the response variable in `factor` or `character` format for classification.
 
-This package is under development and was made for the specific needs of our laboratory.
+This package is under development and was made for the specific needs of our laboratory, further efforts towards broader applcation is being developed.
 
 ## Main Functions
 
@@ -30,6 +35,7 @@ data.frame() : Creates data frames, tightly coupled collections of variables whi
 matplot() : Plot the columns of one matrix against the columns of another
 
 ## Upload the parameters and raw spectra to R software
+
 ```R
 setwd("~/**Desktop/R-PLAYING**")    #Replace this by the directory where you stored the files
 SampleInfo<-read.csv("SampleInfo.csv", sep=",", dec=".", header=TRUE)    #Load CSV file containing SampleInfo data
@@ -57,7 +63,7 @@ S100AA<-RawSpectra[1001:1100,]
 S100LA<-RawSpectra[1101:1200,]
 ```
 
-Below are the sample formulated matrixes consisting of Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*)
+Below are the sample formulated sample matrixes constainig Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*) and there mixtures.
 
 ## Sample Keys 
 
@@ -110,12 +116,9 @@ SPECTRAraw<-data.frame(t(SPECTRAraws))
 
 SPECTRAraw1<-SPECTRAraw[ ,2:1201]
 
-
 matplot(SPECTRAraw$X1,SPECTRAraw1,type="l",col = rep(1:12, each = 100), xlab = "Wavelength (nm)" , ylab = "Absorbance (au)")
 
 legend("topleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex = 1)
-
-
 ```
 
 ![Rplot3001](https://user-images.githubusercontent.com/68889345/131867920-6e7ef98e-0ca4-4c32-b3a3-3a3c6dd095d4.png)
@@ -138,7 +141,7 @@ legend("topleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex = 
 
 ## Data Pretreatment Key I
 
-The raw spectra was subjected to SNV data pretreatment to remove the 
+The raw spectra was subjected to SNV data pretreatment to remove the scatter effects
 
 Below are the outcome of the treatment and what each denote:
 
@@ -224,7 +227,7 @@ matplot(Wavelength,t(snvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (nm)
 ![Rplot3024a](https://user-images.githubusercontent.com/68889345/131875860-3819d9e0-668a-4f77-82ab-3e87d2da6993.png)
 
 
-## Transform the data for a combined plot
+*Transform the data for a combined plot*
 
 ```
 SPECTRAsnvs<-rbind.data.frame(Wavelength,snvspectra)
@@ -236,7 +239,6 @@ SPECTRAsnv1<-SPECTRAsnv[ ,2:1201]
 matplot(SPECTRAsnv$X1,SPECTRAsnv1,type="l",col = rep(1:12, each = 100), xlab = "Wavelength (nm)" , ylab = "Transformed Absorbance")
 
 legend("topleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex = 1)
-
 ```
 
 ![Rplot30snvall](https://user-images.githubusercontent.com/68889345/131875837-21282257-9939-4f3f-ba8d-33d7f19519ad.png)
@@ -252,7 +254,6 @@ SGspectra <- prep.savgol(snvspectra, width = 17, porder = 2, dorder = 2)
 ```
 
 - Split the SG filter treated spectra to the 12 different categories
-
 
 
 SGFsnvS1090ACAA : Savytzky-Golay transformed S1090ACAA
@@ -279,10 +280,27 @@ SGFsnvS100AA : Savytzky-Golay transformed S100AA
 
 SGFsnvS100LA : Savytzky-Golay transformed S100LA
 
+
+*Group or classify the spectra*
+
+```R
+SGFsnvS1090ACAA<-SGspectra[1:100,]
+SGFsnvS1090ACLA<-SGspectra[101:200,]
+SGFsnvS1090AALA<-SGspectra[201:300,]
+SGFsnvS5050ACAA<-SGspectra[301:400,]
+SGFsnvS5050ACLA<-SGspectra[401:500,]
+SGFsnvS5050AALA<-SGspectra[501:600,]
+SGFsnvS9010ACAA<-SGspectra[601:700,]
+SGFsnvS9010ACLA<-SGspectra[701:800,]
+SGFsnvS9010AALA<-SGspectra[801:900,]
+SGFsnvS100AC<-SGspectra[901:1000,]
+SGFsnvS100AA<-SGspectra[1001:1100,]
+SGFsnvS100LA<-SGspectra[1101:1200,]
+```
+
 *Plot the SNV tranformed data*
 
 ```R
-
 matplot(Wavelength,t(SGFsnvS1090ACAA), type = "l",lty=1,col=1,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS1090ACAA")
 matplot(Wavelength,t(SGFsnvS1090ACLA), type = "l",lty=1,col=2,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS1090ACLA") 
 matplot(Wavelength,t(SGFsnvS1090AALA), type = "l",lty=1,col=3,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS1090AALA")
@@ -295,7 +313,6 @@ matplot(Wavelength,t(SGFsnvS9010AALA), type = "l",lty=1,col=9,xlab = "wavelength
 matplot(Wavelength,t(SGFsnvS100AC), type = "l",lty=1,col=10,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS100AC")
 matplot(Wavelength,t(SGFsnvS100AA), type = "l",lty=1,col=11,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS100AA")
 matplot(Wavelength,t(SGFsnvS100LA), type = "l",lty=1,col=12,xlab = "wavelength (nm)", ylab = "Transformed Absorbance (au)",main = "SGFsnvS100LA")
-
 ```
 
 ![Rplot3025](https://user-images.githubusercontent.com/68889345/131876510-29f240b7-eadf-42d6-a5b4-76433de11044.png)
@@ -322,9 +339,11 @@ SPECTRAsgs<-rbind.data.frame(Wavelength,SGspectra)
 SPECTRAsg<-data.frame(t(SPECTRAsgs))
 
 SPECTRAsg1<-SPECTRAsg[ ,2:1201]
+```
 
 # Plot all spectra together
 
+```
 matplot(SPECTRAsg$X1,SPECTRAsg1,type="l",col = rep(1:12, each = 100), xlab = "Wavelength (nm)" , ylab = "Transformed Absorbance")
 
 legend("bottomleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex = 1)
@@ -352,11 +371,13 @@ Calibpca_model$loadings[1:4, 1:4]
 ```
 
 ```
+##############################
    Comp 1     Comp 2      Comp 3     Comp 4
 1 0.01511032 0.09008960  0.09061374 -0.1433531
 2 0.02491434 0.08134250  0.04010265 -0.2263023
 3 0.02880470 0.06849692 -0.01527204 -0.2816507
 4 0.02839777 0.05369044 -0.06064988 -0.3126289
+##############################
 ```
 
 
@@ -365,12 +386,15 @@ Calibpca_model$res$cal$scores[1:4, 1:4]
 ```
 
 ```
- Comp 1    Comp 2    Comp 3     Comp 4
+##############################
+Comp 1    Comp 2    Comp 3     Comp 4
 SamplesData.NIR.A2 7.752818 -11.89528 0.6831984 -0.5235035
 SamplesData.NIR.A3 7.578034 -13.23961 1.8856384 -0.3665607
 SamplesData.NIR.A4 7.488082 -12.38351 0.1403219  1.3298068
 SamplesData.NIR.A6 7.366403 -10.72870 1.8437984 -1.5862289
+##############################
 ```
+
 
 ```R
 Predictnmodel <- predict(Calibpca_model, testset)
@@ -378,6 +402,7 @@ print(Predictnmodel)
 ```
 
 ```
+##############################
 Results for PCA decomposition (class pcares)
 Major fields:
 $scores - matrix with score values
@@ -386,6 +411,7 @@ $Q - matrix with Q residuals
 $ncomp.selected - selected number of components
 $expvar - explained variance for each component
 $cumexpvar - cumulative explained variance
+##############################
 ```
 
 
@@ -403,6 +429,7 @@ print(Calibpca_model$res$cal)
 ```
 
 ```
+##############################
 Results for PCA decomposition (class pcares)
 Major fields:
 $scores - matrix with score values
@@ -411,6 +438,7 @@ $Q - matrix with Q residuals
 $ncomp.selected - selected number of components
 $expvar - explained variance for each component
 $cumexpvar - cumulative explained variance
+##############################
 ```
 
 ```R
@@ -418,6 +446,8 @@ print(Calibpca_model$res$test)
 ```
 
 ```
+##############################
+
 Results for PCA decomposition (class pcares)
 
 Major fields:
@@ -427,6 +457,7 @@ $Q - matrix with Q residuals
 $ncomp.selected - selected number of components
 $expvar - explained variance for each component
 $cumexpvar - cumulative explained variance
+##############################
 ```
 
 
@@ -438,6 +469,8 @@ summary(Calibpca_model)
 ```
 
 ```
+##############################
+
 Summary for PCA model (class pca)
 Type of limits: ddmoments
 Alpha: 0.05
@@ -451,7 +484,9 @@ Comp 4     5.691   2.50     87.82  9  3
 Comp 5     3.580   1.57     89.39 11  3
 Comp 6     2.196   0.96     90.36 12  3
 Comp 7     1.852   0.81     91.17 12  4
+##############################
 ```
+*Performance*
 
 ```R
 var <- data.frame(
@@ -461,6 +496,7 @@ show(round(var, 1))
 ```
 
 ```
+##############################
  cal test
 Comp 1 48.7 48.0
 Comp 2 31.6 32.0
@@ -469,7 +505,9 @@ Comp 4  2.5  2.7
 Comp 5  1.6  1.6
 Comp 6  1.0  0.8
 Comp 7  0.8  0.7
+##############################
 ```
+
 *scores and loadings plots for PC1 vs PC2*
 
 ```
@@ -492,12 +530,15 @@ mdaplot(Calibpca_model$loadings, type = "p", show.labels = TRUE, show.lines = c(
 ![Rplot31](https://user-images.githubusercontent.com/68889345/131885757-81ce8ba8-546b-4183-ac85-1723672f5d17.png)
 ![Rplot31B](https://user-images.githubusercontent.com/68889345/131885758-7278c16a-8682-4fe6-acdd-8517a893ec5a.png)
 
+
 ```
+##############################
 ispectra <- seq(4, 1200, 4)
 Calibpca_modelx <- SGspectra[-ispectra, -(c(1,2))]
 Calibpca_modely <- SGspectra[-ispectra, 2, drop = FALSE]
 testset_modelx <- SGspectra[ispectra, -(c(1,2))]
 testset_modely <- SGspectra[ispectra, 2, drop = FALSE]
+##############################
 ```
 
 ```
@@ -510,6 +551,7 @@ print(PLS_Prediction)
 ```
 
 ```
+##############################
 PLS model (class pls)
 Call:
 selectCompNum.pls(obj = PLS_Prediction, ncomp = 3)
@@ -522,6 +564,7 @@ $yloadings - vector with y loadings
 $weights - vector with weights
 $res - list with results (calibration, cv, etc)
 Try summary(model) and plot(model) to see the model performance.
+##############################
 ```
 
 *Other summaries that may be of interest*
@@ -893,6 +936,7 @@ Cal   8.43     71.73 95  0  0  5    NA  0.95     0.95
 Cv      NA        NA 94  0  0  6    NA  0.94     0.94
 ##############################
 ```
+
 *Predict the testset using the SIMCA model*
 
 ```
@@ -967,7 +1011,7 @@ m.100LA <- simca(s.100LA, "100LA", 12)
 m.100LA <- selectCompNum(m.100LA, 12)
 ```
 
-*Apply SIMCAM
+*Apply SIMCAM*
 
 ```
 Simca_m.All <- simcam(list(m.1090ACAA, m.1090ACLA, m.1090AALA,m.5050ACAA,m.5050ACLA,
