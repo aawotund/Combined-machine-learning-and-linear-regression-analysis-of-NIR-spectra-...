@@ -12,7 +12,7 @@ We thank the creators of these useful packages.
 
 + Develop a database to identify substandard pharmaceutical drugs as well as illicit drugs
 
-+ Develop a user friendly app for every day use of endusers, forensic scientist and law enforcement
++ Develop a user friendly app for every day use of endusers, forensic scientists and law enforcement agents
 
 ## Warning:
 
