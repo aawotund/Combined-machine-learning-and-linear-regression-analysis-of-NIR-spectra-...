@@ -14,6 +14,16 @@ We thank the creators of these useful packages.
 
 + Develop a user friendly app for every day use of endusers, forensic scientists and law enforcement agents
 
+
+# Highlight of Pharmaceutical Formulations Employed
+
+|Names|% AC. w/w|% AC. Molar ratio|Actual Mass AC|Actua Mass 
+
+
+
+
+ 100% AC (100ACAC), 90% AC & 10% adulterants (9010 ACAA or 9010 ACLA), 50% AC & 50% others (5050ACAA or 5050ACLA) and 10% AC & 90% others (1090ACAA or 1090 ACLA).
+
 ## Warning:
 
 The data structure must be in Dataframe format. Use the following command to transform it into a dataframe: as.data.frame().
