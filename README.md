@@ -18,10 +18,13 @@ We thank the creators of these useful packages.
 # Highlight of Pharmaceutical Formulations Employed
 |Names|% AC. w/w|% AC. Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|
 
-| 100% AC|100| 0 | 0 | 0 | 0 | 0 |
+| 100% AC| 100 | 0 | 0 | 0 | 0 | 0 |
+| 90% AC | 90 | 0 | 0 | 0 | 0 | 0 |
+| 90% AC | 90 | 0 | 0 | 0 | 0 | 0 |
 
 
- 100% AC (100ACAC), 90% AC & 10% adulterants (9010 ACAA or 9010 ACLA), 50% AC & 50% others (5050ACAA or 5050ACLA) and 10% AC & 90% others (1090ACAA or 1090 ACLA).
+
+, 90% AC & 10% adulterants (9010 ACAA or 9010 ACLA), 50% AC & 50% others (5050ACAA or 5050ACLA) and 10% AC & 90% others (1090ACAA or 1090 ACLA).
 
 ## Warning:
 
