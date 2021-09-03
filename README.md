@@ -1,6 +1,6 @@
 # NIR-DATA-ANALYSIS-FOR-DETECTION-OF-SUBSTANDED-AND-FALSIFIED-PHARMACEUTICAL-AND-ILLICIT-DRUGS
 
-*Author: Olatunde Awotunde, MS (PHD in view @ University of Notre Dame) . Email: aawotund@nd.edu;olatundeawotunde1@gmail.com*
+*Author: Olatunde Awotunde, MS (PHD in view @ University of Notre Dame) . Email: `aawotund@nd.edu` `olatundeawotunde1@gmail.com`*
 
 This package uses functions developed from the following packages:
 
