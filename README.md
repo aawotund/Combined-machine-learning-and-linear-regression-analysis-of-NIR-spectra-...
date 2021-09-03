@@ -17,6 +17,7 @@ We thank the creators of these useful packages.
 
 # Highlight of Pharmaceutical Formulations Employed
 |Names|% AC. w/w|% AC. Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|
+
 | 100% AC|100| 0 | 0 | 0 | 0 | 0 |
 
 
