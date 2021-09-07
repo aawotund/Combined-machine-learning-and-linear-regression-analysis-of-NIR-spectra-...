@@ -15,7 +15,7 @@ We thank the creators of these useful packages.
 + Develop a user friendly app for every day use of endusers, forensic scientists and law enforcement agents
 
 
-## Highlight of Pharmaceutical Formulations Employed
+## 1.1 Highlight of Pharmaceutical Formulations Employed
 
 |Names|% AC. w/w|% AC. Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|
 |---|---|---|---|---|---|---|
