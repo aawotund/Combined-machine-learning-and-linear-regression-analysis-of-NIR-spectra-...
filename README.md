@@ -19,15 +19,15 @@ We thank the creators of these useful packages.
 
 |Names|% AC. w/w|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|Class|
 |---|---|---|---|---|---|---|
-| 100% AC| 100 | 0 | 0 | 0 | 0 | 
-| 100% AA| 100 | 0 | 0 | 0 | 0 | 
-| 100% LA| 100 | 0 | 0 | 0 | 0 | 
-| 90% AC 10% LA| 90 | 0 | 0 | 0 | 0 | 
-| 90% AC 10% AA| 90 | 0 | 0 | 0 | 0 | 
-| 50% AC 50% LA| 50 | 0 | 0 | 0 | 0 | 
-| 50% AC 50% AA| 50 | 0 | 0 | 0 | 0 | 
-| 10% AC 90% LA| 10 | 0 | 0 | 0 | 0 | 
-| 10% AC 90% AA| 10 | 0 | 0 | 0 | 0 | 
+| 100% AC| 100 | 0 | 0 | 0 | High | 
+| 100% AA| 100 | 0 | 0 | 0 | None | 
+| 100% LA| 100 | 0 | 0 | 0 | None | 
+| 90% AC 10% LA| 90 | 0 | 0 | 0 | High | 
+| 90% AC 10% AA| 90 | 0 | 0 | 0 | High | 
+| 50% AC 50% LA| 50 | 0 | 0 | 0 | Low | 
+| 50% AC 50% AA| 50 | 0 | 0 | 0 | Low | 
+| 10% AC 90% LA| 10 | 0 | 0 | 0 | Low | 
+| 10% AC 90% AA| 10 | 0 | 0 | 0 | Low | 
 
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
