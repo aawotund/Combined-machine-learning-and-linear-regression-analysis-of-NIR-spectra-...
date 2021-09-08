@@ -15,25 +15,58 @@ We thank the creators of these useful packages.
 + Develop a user friendly app for every day use of endusers, forensic scientists and law enforcement agents
 
 
-## 1.1 Highlight of Pharmaceutical Formulations Employed
+## 1.1 Highlight of Pharmaceutical Formulations 
 
-|Names|% AC. w/w|% AC. Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|
-|---|---|---|---|---|---|---|
+|Names|% AC. w/w|Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|Class|
+|---|---|---|---|---|---|---|---|
 | 100% AC| 100 | 0 | 0 | 0 | 0 | 0 |
 | 100% AA| 100 | 0 | 0 | 0 | 0 | 0 |
 | 100% LA| 100 | 0 | 0 | 0 | 0 | 0 |
-| 90% AC | 90 | 0 | 0 | 0 | 0 | 0 |
-| 90% AC | 90 | 0 | 0 | 0 | 0 | 0 |
-| 50% AC | 50 | 0 | 0 | 0 | 0 | 0 |
-| 50% AC | 50 | 0 | 0 | 0 | 0 | 0 |
-| 10% AC | 10 | 0 | 0 | 0 | 0 | 0 |
-| 10% AC | 10 | 0 | 0 | 0 | 0 | 0 |
+| 90% AC 10% LA| 90 | 0 | 0 | 0 | 0 | 0 |
+| 90% AC 10% AA| 90 | 0 | 0 | 0 | 0 | 0 |
+| 50% AC 50% LA| 50 | 0 | 0 | 0 | 0 | 0 |
+| 50% AC 50% AA| 50 | 0 | 0 | 0 | 0 | 0 |
+| 10% AC 90% LA| 10 | 0 | 0 | 0 | 0 | 0 |
+| 10% AC 90% AA| 10 | 0 | 0 | 0 | 0 | 0 |
+
+## 1.2 Highlight of Tylenol and TopCare Brand Formulations
+
+|Names|% AC. w/w|Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|Class|
+|---|---|---|---|---|---|---|---|
+| 100% AC| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 100% AA| 100 | 0 | 0 | 0 | 0 | 0 |None|
+| 100% LA| 100 | 0 | 0 | 0 | 0 | 0 |None|
+| 90% AC 10% LA| 90 | 0 | 0 | 0 | 0 | 0 |High|
+| 90% AC 10% AA| 90 | 0 | 0 | 0 | 0 | 0 |High|
+| 50% AC 50% LA| 50 | 0 | 0 | 0 | 0 | 0 |Low|
+| 50% AC 50% AA| 50 | 0 | 0 | 0 | 0 | 0 |Low|
+| 10% AC 90% LA| 10 | 0 | 0 | 0 | 0 | 0 |Low|
+| 10% AC 90% AA| 10 | 0 | 0 | 0 | 0 | 0 |Low|
+
+## 1.3 Highlight of Blind folded Formulations 
+
+|Names|% AC. w/w|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|
+|---|---|---|---|---|---|
+| 100% AC| 100 | 0 | 0 | 0 |
+| 100% AA| 100 | 0 | 0 | 0 | 0 |
+| 100% LA| 100 | 0 | 0 | 0 | 0 |
+| 90% AC 10% LA| 90 | 0 | 0 | 0 | 0 |
+| 90% AC 10% AA| 90 | 0 | 0 | 0 | 0 |
+| 50% AC 50% LA| 50 | 0 | 0 | 0 | 0 | 
+| 50% AC 50% AA| 50 | 0 | 0 | 0 | 0 | 
+| 10% AC 90% LA| 10 | 0 | 0 | 0 | 0 | 
+| 10% AC 90% AA| 10 | 0 | 0 | 0 | 0 | 
+
+## 1.4 Highlight of Blind folded Ternary Formulations Employed
+
+|Names|% AC. w/w|Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|Actual Mass LA|
+|---|---|---|---|---|---|---|
+| 33% AC 33% LA 33% AA| 100 | 0 | 0 | 0 | 0 | 0 |
+| 10% AC 30% LA 60% AA | 0 | 0 | 0 | 0 | 0 |
+| 20% AC 20% LA 60% AA| 0 | 0 | 0 | 0 | 0 |
+| 30% AC 10% LA 60% AA| 90 | 0 | 0 | 0 | 0 | 0 |
 
 
-
-
-
-, 90% AC & 10% adulterants (9010 ACAA or 9010 ACLA), 50% AC & 50% others (5050ACAA or 5050ACLA) and 10% AC & 90% others (1090ACAA or 1090 ACLA).
 
 ## Warning:
 
