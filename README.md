@@ -17,7 +17,7 @@ We thank the creators of these useful packages.
 
 ## 1.1 Highlight of Pharmaceutical Formulations 
 
-|Names|% AC. w/w|Actual Mass AC|Actua Mass AA|Actual Mass LA|Class|
+|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|Class|
 |---|---|---|---|---|---|
 | 100% AC| 100 | 0 | 0 | 0 |High | 
 | 100% AA| 100 | 0 | 0 | 0 | None | 
@@ -31,7 +31,7 @@ We thank the creators of these useful packages.
 
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
-|Names|Actual Mass TEXST|Actual Mass TREST|Actual Mass TCESSC|Actual Mass TCRES|Actual Mass TRARE|Class|
+|Names|Actual Mass TEXST (g)|Actual Mass TREST (g)|Actual Mass TCESSC (g)|Actual Mass TCRES (g)|Actual Mass TRARE(g)|Class|
 |---|---|---|---|---|---|---|
 | 100% TEXST| 100 | 0 | 0 | 0 | 0 |High|
 | 100% TRARE| 100 | 0 | 0 | 0 | 0 |High|
@@ -56,7 +56,7 @@ We thank the creators of these useful packages.
 
 ## 1.3 Highlight of Blind folded Formulations 
 
-|Names|% AC. w/w|Actual Mass AC|Actua Mass AA|Actual Mass LA|
+|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|
 |---|---|---|---|---|
 | 100% AC| 100 | 0 | 0 | 0 |
 | 100% AA| 100 | 0 | 0 | 0 | 
@@ -70,7 +70,7 @@ We thank the creators of these useful packages.
 
 ## 1.4 Highlight of Blind folded Ternary Formulations Employed
 
-|Names|% AC. w/w|Molar ratio|Actual Mass AC|Actua Mass AA|Actual Mass LA|
+|Names|% AC. w/w|Molar ratio|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|
 |---|---|---|---|---|---|
 | 33% AC 33% LA 33% AA| 100 | 0 | 0 | 0 | 0 |
 | 10% AC 30% LA 60% AA | 0 | 0 | 0 | 0 | 0 | 
