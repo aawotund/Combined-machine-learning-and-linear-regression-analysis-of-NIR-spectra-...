@@ -31,11 +31,13 @@ We thank the creators of these useful packages.
 
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
-|Names|% AC. w/w|Actual Mass AC|Actua Mass AA|Actual Mass LA|Class|
-|---|---|---|---|---|---|
-| 100% AC| 100 | 0 | 0 | 0 |High|
-| 100% AA| 100 | 0 | 0 | 0 |None|
-| 100% LA| 100 | 0 | 0 | 0 |None|
+|Names|Actual Mass TEXST|Actual Mass TREST|Actual Mass TCESSC|Actual Mass TCRES|Actual Mass TRARE|Class|
+|---|---|---|---|---|---|---|
+| 100% TEXST| 100 | 0 | 0 | 0 |High|
+| 100% TRARE| 100 | 0 | 0 | 0 |None|
+| 100% TREST| 100 | 0 | 0 | 0 |None|
+| 100% TCESSC| 100 | 0 | 0 | 0 |None|
+| 100% TCRES| 100 | 0 | 0 | 0 |None|
 | 90% AC 10% LA| 90 | 0 | 0 | 0 |High|
 | 90% AC 10% AA| 90 | 0 | 0 | 0 |High|
 | 50% AC 50% LA| 50 | 0 | 0 | 0 |Low|
