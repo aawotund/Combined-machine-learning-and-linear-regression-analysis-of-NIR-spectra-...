@@ -32,7 +32,7 @@ We thank the creators of these useful packages.
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
 |Names|% AC. w/w|Actual Mass AC|Actua Mass AAActual Mass LA|Class|
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | 100% AC| 100 | 0 | 0 | 0 |High|
 | 100% AA| 100 | 0 | 0 | 0 |None|
 | 100% LA| 100 | 0 | 0 | 0 |None|
