@@ -44,15 +44,15 @@ We thank the creators of these useful packages.
 | 90% TCESSC 10% AA| 90 | 0 | 0 | 0 |High|
 | 90% TCRES 10% AA| 90 | 0 | 0 | 0 |High|
 | 50% TEXST 50% LA| 50 | 0 | 0 | 0 |Low|
-| 50% TRARE 50% AA| 50 | 0 | 0 | 0 |Low|
-| 50% TREST 50% AA| 50 | 0 | 0 | 0 |Low|
-| 50% TCESSC 50% AA| 50 | 0 | 0 | 0 |Low|
-| 50% TCRES 50% AA| 50 | 0 | 0 | 0 |Low|
+| 50% TRARE 50% LA| 50 | 0 | 0 | 0 |Low|
+| 50% TREST 50% LA| 50 | 0 | 0 | 0 |Low|
+| 50% TCESSC 50% LA| 50 | 0 | 0 | 0 |Low|
+| 50% TCRES 50% LA| 50 | 0 | 0 | 0 |Low|
 | 10% TEXST 90% LA| 10 | 0 | 0 | 0 |Low|
-| 10% TRARE 90% AA| 10 | 0 | 0 | 0 |Low|
-| 10% TREST 90% AA| 10 | 0 | 0 | 0 |Low|
-| 10% TCESSC 90% AA| 10 | 0 | 0 | 0 |Low|
-| 10% TCRES 90% AA| 10 | 0 | 0 | 0 |Low|
+| 10% TRARE 90% LA| 10 | 0 | 0 | 0 |Low|
+| 10% TREST 90% LA| 10 | 0 | 0 | 0 |Low|
+| 10% TCESSC 90% LA| 10 | 0 | 0 | 0 |Low|
+| 10% TCRES 90% LA| 10 | 0 | 0 | 0 |Low|
 
 ## 1.3 Highlight of Blind folded Formulations 
 
