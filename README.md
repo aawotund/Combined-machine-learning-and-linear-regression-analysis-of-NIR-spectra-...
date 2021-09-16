@@ -14,6 +14,10 @@ We thank the creators of these useful packages.
 
 + Develop a user friendly app for every day use of endusers, forensic scientists and law enforcement agents
 
+## Note
+
++ Throughout this work, we refer Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*),Isoniazid (*IS*),Tylenol Extra Strength (*TEXST), Tylenol Rapid 
++ Release (*TRARE*), Tylenol Regular Strength (*TREST*), Top Care Extra Strength Sweet Coat (*TCESSC*), Top Care Regular Strength (*TCRES*) as the italized.
 
 ## 1.1 Highlight of Pharmaceutical Formulations 
 
@@ -133,7 +137,7 @@ S100AA<-RawSpectra[1001:1100,]
 S100LA<-RawSpectra[1101:1200,]
 ```
 
-Below are the sample formulated sample matrixes constainig Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*) and there mixtures.
+Below are the sample formulated sample matrixes constaining Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*),Isoniazid (*IS*), and there mixtures.
 
 ## Sample Keys 
 
