@@ -22,12 +22,15 @@ We thank the creators of these useful packages.
 | 100% AC| 100 | 0 | 0 | 0 |High | 
 | 100% AA| 100 | 0 | 0 | 0 | None | 
 | 100% LA| 100 | 0 | 0 | 0 | None | 
-| 90% AC 10% LA| 90 | 0 | 0 | 0 | High | 
-| 90% AC 10% AA| 90 | 0 | 0 | 0 | High | 
-| 50% AC 50% LA| 50 | 0 | 0 | 0 | Low | 
-| 50% AC 50% AA| 50 | 0 | 0 | 0 | Low | 
-| 10% AC 90% LA| 10 | 0 | 0 | 0 | Low | 
-| 10% AC 90% AA| 10 | 0 | 0 | 0 | Low | 
+| 90% AC 10% LA| 90 | 90 | 0 | 10 | High | 
+| 90% AC 10% AA| 90 | 90 | 10 | 0 | High | 
+| 50% AC 50% LA| 50 | 50 | 0 | 50 | Low | 
+| 50% AC 50% AA| 50 | 50 | 50 | 0 | Low | 
+| 10% AC 90% LA| 10 | 10 | 0 | 90 | Low | 
+| 10% AC 90% AA| 10 | 10 | 90 | 0 | Low | 
+| 10% AA 90% LA| 0 | 0 | 10 | 90 | Low 0R None | 
+| 90% AA 10% LA| 0 | 0 | 90 | 10 | Low 0R None | 
+| 50% AA 50% LA| 0 | 0 | 50 | 50 | Low 0R None | 
 
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
