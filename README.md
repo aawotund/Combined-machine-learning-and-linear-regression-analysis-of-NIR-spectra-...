@@ -31,28 +31,28 @@ We thank the creators of these useful packages.
 
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
-|Names|Actual Mass TEXST (g)|Actual Mass TREST (g)|Actual Mass TCESSC (g)|Actual Mass TCRES (g)|Actual Mass TRARE (g)|Class|
+|Names|Actual Mass TEXST (g)|Actual Mass TREST (g)|Actual Mass TCESSC (g)|Actual Mass TCRES (g)|Actual Mass TRARE (g)|Actual Mass LA (g)|Class|
 |---|---|---|---|---|---|---|
-| 100% TEXST| 100 | 0 | 0 | 0 | 0 |High|
-| 100% TRARE| 100 | 0 | 0 | 0 | 0 |High|
-| 100% TREST| 100 | 0 | 0 | 0 | 0 |High|
-| 100% TCESSC| 100 | 0 | 0 | 0 | 0 |High|
-| 100% TCRES| 100 | 0 | 0 | 0 | 0 |High|
-| 90% TEXST 10% LA| 90 | 0 | 0 | 0 | 0 |High|
-| 90% TRARE 10% AA| 90 | 0 | 0 | 0 | 0 |High|
-| 90% TREST 10% AA| 90 | 0 | 0 | 0 | 0 |High|
-| 90% TCESSC 10% AA| 90 | 0 | 0 | 0 | 0 |High|
-| 90% TCRES 10% AA| 90 | 0 | 0 | 0 | 0 |High|
-| 50% TEXST 50% LA| 50 | 0 | 0 | 0 | 0 |Low|
-| 50% TRARE 50% LA| 50 | 0 | 0 | 0 | 0 |Low|
-| 50% TREST 50% LA| 50 | 0 | 0 | 0 | 0 |Low|
-| 50% TCESSC 50% LA| 50 | 0 | 0 | 0 | 0 |Low|
-| 50% TCRES 50% LA| 50 | 0 | 0 | 0 | 0 |Low|
-| 10% TEXST 90% LA| 10 | 0 | 0 | 0 | 0 |Low|
-| 10% TRARE 90% LA| 10 | 0 | 0 | 0 | 0 |Low|
-| 10% TREST 90% LA| 10 | 0 | 0 | 0 | 0 |Low|
-| 10% TCESSC 90% LA| 10 | 0 | 0 | 0 | 0 |Low|
-| 10% TCRES 90% LA| 10 | 0 | 0 | 0 | 0 |Low|
+| 100% TEXST| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 100% TRARE| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 100% TREST| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 100% TCESSC| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 100% TCRES| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 90% TEXST 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
+| 90% TRARE 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
+| 90% TREST 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
+| 90% TCESSC 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
+| 90% TCRES 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
+| 50% TEXST 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
+| 50% TRARE 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
+| 50% TREST 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
+| 50% TCESSC 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
+| 50% TCRES 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
+| 10% TEXST 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
+| 10% TRARE 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
+| 10% TREST 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
+| 10% TCESSC 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
+| 10% TCRES 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
 
 ## 1.3 Highlight of Blind folded Formulations 
 
