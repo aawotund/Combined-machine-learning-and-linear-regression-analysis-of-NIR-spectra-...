@@ -37,39 +37,39 @@ We thank the creators of these useful packages.
 |Names|Actual Mass TEXST (g)|Actual Mass TREST (g)|Actual Mass TCESSC (g)|Actual Mass TCRES (g)|Actual Mass TRARE (g)|Actual Mass LA (g)|Class|
 |---|---|---|---|---|---|---|---|
 | 100% TEXST| 100 | 0 | 0 | 0 | 0 | 0 |High|
-| 100% TRARE| 100 | 0 | 0 | 0 | 0 | 0 |High|
-| 100% TREST| 100 | 0 | 0 | 0 | 0 | 0 |High|
-| 100% TCESSC| 100 | 0 | 0 | 0 | 0 | 0 |High|
-| 100% TCRES| 100 | 0 | 0 | 0 | 0 | 0 |High|
+| 100% TRARE| 0 | 0 | 0 | 0 | 100 | 0 |High|
+| 100% TREST| 0 | 100 | 0 | 0 | 0 | 0 |High|
+| 100% TCESSC| 0 | 0 | 100 | 0 | 0 | 0 |High|
+| 100% TCRES| 0 | 0 | 0 | 100 | 0 | 0 |High|
 | 90% TEXST 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
-| 90% TRARE 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
-| 90% TREST 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
-| 90% TCESSC 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
-| 90% TCRES 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
+| 90% TRARE 10% LA| 0 | 0 | 0 | 0 | 90 | 10 |High|
+| 90% TREST 10% LA| 0 | 90 | 0 | 0 | 0 | 10 |High|
+| 90% TCESSC 10% LA| 0 | 0 | 90 | 0 | 0 | 10 |High|
+| 90% TCRES 10% LA| 0 | 0 | 0 | 90 | 0 | 10 |High|
 | 50% TEXST 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
-| 50% TRARE 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
-| 50% TREST 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
-| 50% TCESSC 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
-| 50% TCRES 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
+| 50% TRARE 50% LA| 0 | 0 | 0 | 0 | 50 | 50 |Low|
+| 50% TREST 50% LA| 0 | 50 | 0 | 0 | 0 | 50 |Low|
+| 50% TCESSC 50% LA| 0 | 0 | 50 | 0 | 0 | 50 |Low|
+| 50% TCRES 50% LA| 0 | 0 | 0 | 50 | 0 | 50 |Low|
 | 10% TEXST 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
-| 10% TRARE 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
-| 10% TREST 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
-| 10% TCESSC 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
-| 10% TCRES 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
+| 10% TRARE 90% LA| 0 | 0 | 0 | 0 | 10 | 90 |Low|
+| 10% TREST 90% LA| 0 | 10 | 0 | 0 | 0 | 90 |Low|
+| 10% TCESSC 90% LA| 0 | 0 | 10 | 0 | 0 | 90 |Low|
+| 10% TCRES 90% LA| 0 | 0 | 0 | 10 | 0 | 90 |Low|
 
 ## 1.3 Highlight of Blind folded Formulations 
 
-|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|
-|---|---|---|---|---|
-| 100% AC| 100 | 0 | 0 | 0 |
-| 100% AA| 100 | 0 | 0 | 0 | 
-| 100% LA| 100 | 0 | 0 | 0 | 
-| 90% AC 10% LA| 90 | 0 | 0 | 0 | 
-| 90% AC 10% AA| 90 | 0 | 0 | 0 | 
-| 50% AC 50% LA| 50 | 0 | 0 | 0 | 
-| 50% AC 50% AA| 50 | 0 | 0 | 0 | 
-| 10% AC 90% LA| 10 | 0 | 0 | 0 |  
-| 10% AC 90% AA| 10 | 0 | 0 | 0 | 
+|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|Actual Mass IS (g)|Starch|
+|---|---|---|---|---|---|---|
+| Sample A| 10 | 10 | 90 | 0 | 0 | 0 |
+| Sample B| 90 | 90 | 0 | 10 | 0 | 0 | 
+| Sample C| 100 | 100 | 0 | 0 | 0 | 0 |
+| Sample D| 40 | 40 | 0 | 0 | 60| 0 | 
+| Sample E| 50 | 50 | 50 | 0 | 0 | 0 |
+| Sample F| 90 | 90 | 10 | 0 | 0 | 0 |
+| Sample G| 0 | 0 | 0 | 0 | 0 | 100 |
+| Sample H| 0 | 0 | 0 | 0 | 100 | 0 | 
+| Sample I| 10 | 10 | 0 | 90 | 0 | 0 |
 
 ## 1.4 Highlight of Blind folded Ternary Formulations Employed
 
