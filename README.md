@@ -75,10 +75,10 @@ We thank the creators of these useful packages.
 
 |Names|% AC. w/w|Molar ratio|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|
 |---|---|---|---|---|---|
-| 33% AC 33% LA 33% AA| 100 | 0 | 0 | 0 | 0 |
-| 10% AC 30% LA 60% AA | 0 | 0 | 0 | 0 | 0 | 
-| 20% AC 20% LA 60% AA| 0 | 0 | 0 | 0 | 0 | 
-| 30% AC 10% LA 60% AA| 90 | 0 | 0 | 0 | 0 | 
+| 33% AC 33% LA 33% AA| 33 | 33 | 33 | 33| 0 |
+| 10% AC 30% LA 60% AA | 10 | 10 | 60 | 30 | 0 | 
+| 20% AC 20% LA 60% AA| 20 | 20 | 60 | 20 | 0 | 
+| 30% AC 10% LA 60% AA| 30 | 30 | 60 | 10 | 0 | 
 
 
 
