@@ -32,7 +32,7 @@ We thank the creators of these useful packages.
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
 |Names|Actual Mass TEXST (g)|Actual Mass TREST (g)|Actual Mass TCESSC (g)|Actual Mass TCRES (g)|Actual Mass TRARE (g)|Actual Mass LA (g)|Class|
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | 100% TEXST| 100 | 0 | 0 | 0 | 0 | 0 |High|
 | 100% TRARE| 100 | 0 | 0 | 0 | 0 | 0 |High|
 | 100% TREST| 100 | 0 | 0 | 0 | 0 | 0 |High|
