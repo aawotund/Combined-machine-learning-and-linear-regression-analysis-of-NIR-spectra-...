@@ -1,1 +1,1 @@
-# NIR-DATA-ANALYSIS-FOR-DETECTION-OF-SUBSTANDED-AND-FALSIFIED-PHARMACEUTICAL-AND-ILLICIT-DRUGS
+# Discerning Substandard and Falsified from Genuine Pharmaceuticals : A Regression and Classification Analysis of NIR Data
