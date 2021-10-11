@@ -16,9 +16,7 @@ We thank the creators of these useful packages.
 
 ## Note
 
-+ Throughout this work, we refer Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*),Isoniazid (*IS*),Tylenol Extra Strength (*TEXST), Tylenol Rapid 
-
-Release (*TRARE*), Tylenol Regular Strength (*TREST*), Top Care Extra Strength Sweet Coat (*TCESSC*), Top Care Regular Strength (*TCRES*) as the italized.
++ Throughout this work, we refer Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*),Isoniazid (*IS*),Tylenol Extra Strength (*TEXST), Tylenol Rapid Release (*TRARE*), Tylenol Regular Strength (*TREST*), Top Care Extra Strength Sweet Coat (*TCESSC*), Top Care Regular Strength (*TCRES*) as the italized.
 
 ## 1.1 Highlight of Pharmaceutical Formulations 
 
