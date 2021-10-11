@@ -5,11 +5,11 @@
          
                   The  Unscrambler software, Integrated all the works in Github repository)
       
-        *: Nicholas Roseboom, (University of Notre Dame) . Email: `nroseboo@nd.edu` (Developed 3D Models that housed NIR spectrometer)*
+        : Nicholas Roseboom, (University of Notre Dame) . Email: `nroseboo@nd.edu` (Developed 3D Models that housed NIR spectrometer)
         
-        *: Revati Rajane, (Sapfonte Precise Solutions) . Email: `revati.rajane@precise-soft.com`(Developed Convoluted Neural Network for NIR data)*
+        : Revati Rajane, (Sapfonte Precise Solutions) . Email: `revati.rajane@precise-soft.com` (Developed Convoluted Neural Network for NIR data)
         
-        *: Ruoyan Chen, (Sapfonte Precise Solutions) . Email: `ruoyan.chen@precise-soft.com`(Developed Convoluted Neural Network for NIR data)*   
+        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: `ruoyan.chen@precise-soft.com` (Developed Convoluted Neural Network for NIR data)*   
         
 This package uses functions developed from the following packages:
 
