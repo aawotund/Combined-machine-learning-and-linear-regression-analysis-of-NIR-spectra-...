@@ -2,7 +2,9 @@
 
       
         *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: `aawotund@nd.edu` (Developed Support Vector Machine, Simca and PLR Algorthms using R and      
-           The  Unscrambler, Integrated all the works in Github repository)*
+         
+         The  Unscrambler, Integrated all the works in Github repository)
+      
         *: Nicholas Roseboom, (University of Notre Dame) . Email: `nroseboo@nd.edu` (Developed 3D Models that housed NIR spectrometer)*
         
         *: Revati Rajane, (Sapfonte Precise Solutions) . Email: `revati.rajane@precise-soft.com`(Developed Convoluted Neural Network for NIR data)*
