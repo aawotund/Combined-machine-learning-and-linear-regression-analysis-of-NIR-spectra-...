@@ -1,15 +1,15 @@
 # NIR-DATA-ANALYSIS-FOR-DETECTION-OF-SUBSTANDED-AND-FALSIFIED-PHARMACEUTICAL-AND-ILLICIT-DRUGS
 
       
-        *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: `aawotund@nd.edu` (Developed Support Vector Machine, Simca and PLR Algorthms using R and      
+        *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: aawotund@nd.edu (Developed Support Vector Machine, Simca and PLR Algorthms using R and      
          
                   The  Unscrambler software, Integrated all the works in Github repository)
       
-        : Nicholas Roseboom, (University of Notre Dame) . Email: `nroseboo@nd.edu` (Developed 3D Models that housed NIR spectrometer)
+        : Nicholas Roseboom, (University of Notre Dame) . Email: nroseboo@nd.edu (Developed 3D Models that housed NIR spectrometer and generated the spectra)
         
-        : Revati Rajane, (Sapfonte Precise Solutions) . Email: `revati.rajane@precise-soft.com` (Developed Convoluted Neural Network for NIR data)
+        : Revati Rajane, (Sapfonte Precise Solutions) . Email: revati.rajane@precise-soft.com (Developed Convoluted Neural Network for NIR data)
         
-        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: `ruoyan.chen@precise-soft.com` (Developed Convoluted Neural Network for NIR data)*   
+        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: ruoyan.chen@precise-soft.com (Developed Convoluted Neural Network for NIR data)*   
         
 This package uses functions developed from the following packages:
 
@@ -25,7 +25,7 @@ We thank the creators of these useful packages.
 
 ## Note
 
-+ Throughout this work, we refer Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*),Isoniazid (*IS*),Tylenol Extra Strength (*TEXST), Tylenol Rapid Release (*TRARE*), Tylenol Regular Strength (*TREST*), Top Care Extra Strength Sweet Coat (*TCESSC*), Top Care Regular Strength (*TCRES*) as the italized.
++ Throughout this work, we refer Acetaminopen (*AC*), Lactose (*LA*), and Ascorbic acid (*AA*),Isoniazid (*IS*),Tylenol Extra Strength (*TEXST*), Tylenol Rapid Release (*TRARE*), Tylenol Regular Strength (*TREST*), Top Care Extra Strength Sweet Coat (*TCESSC*), Top Care Regular Strength (*TCRES*) as the italized.
 
 ## 1.1 Highlight of Pharmaceutical Formulations 
 
