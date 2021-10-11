@@ -1,5 +1,6 @@
 # Discerning Substandard and Falsified from Genuine Pharmaceuticals : A Regression and Classification Analysis of NIR Data
-  *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: aawotund@nd.edu (Developed Support Vector Machine, Simca and PLR Algorthms using R and      
+  
+       *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: aawotund@nd.edu (Developed Support Vector Machine, Simca and PLR Algorthms using R and      
          
                   The  Unscrambler software, Integrated all the works in Github repository)
       
