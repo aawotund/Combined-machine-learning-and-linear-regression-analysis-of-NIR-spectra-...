@@ -28,7 +28,7 @@ We thank the creators of these useful packages.
 
 ## 1.1 Highlight of Pharmaceutical Formulations 
 
-|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|Class|
+|Names|% AC. Molar Ratio|Actual Mass AC (moles)|Actua Mass AA (moles)|Actual Mass LA (moles)|Class|
 |---|---|---|---|---|---|
 | 100% AC| 100 | 0 | 0 | 0 |High | 
 | 100% AA| 100 | 0 | 0 | 0 | None | 
