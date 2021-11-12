@@ -1,10 +1,11 @@
 # Discerning Substandard and Falsified from Genuine Pharmaceuticals : A Regression and Classification Analysis of NIR Data
   
-       *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: aawotund@nd.edu (Developed Support Vector Machine, Simca and PLR Algorthms using R and      
+       *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: aawotund@nd.edu (Developed Chemometric Algorthms using R and      
          
-                  The  Unscrambler software, Integrated all the works in Github repository)
+                  The  Unscrambler software, Integrated all the works in Github repository, compose the manuscript)
       
         : Nicholas Roseboom, (University of Notre Dame) . Email: nroseboo@nd.edu (Developed 3D Models that housed NIR spectrometer and generated the spectra)
+        : Jin Cai, (University of Notre Dame) . Email: jcai@nd.edu (Generated the NIR spectra for random pharmaceutical)
         
         : Revati Rajane, (Sapfonte Precise Solutions) . Email: revati.rajane@precise-soft.com (Developed Convoluted Neural Network for NIR data)
         
