@@ -30,7 +30,7 @@ We thank the creators of these useful packages.
 
 |Names|% AC. Molar Ratio| AC. (moles)|AA. (moles)|LA. (moles)|Class|
 |---|---|---|---|---|---|
-| 100% AC| 100 | 0 | 0 | 0 |High | 
+| 100% AC| 100 | 100 | 0 | 0 |High | 
 | 100% AA| 0 | 0 | 100 | 0 | None | 
 | 100% LA| 0 | 0 | 0 | 100 | None | 
 | 90% AC 10% LA| 90 | 90 | 0 | 10 | High | 
