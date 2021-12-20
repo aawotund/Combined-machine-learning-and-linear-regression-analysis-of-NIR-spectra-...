@@ -598,11 +598,6 @@ par(mfrow = c(1, 1))
 mdaplot(Calibpca_model$res$cal$scores, type = "p",show.labels = FALSE, show.lines = c(0, 0))
 ```
 
-#![Rplot13](https://user-images.githubusercontent.com/68889345/131245998-36ae9dfd-d171-4a65-b1af-85e652575a0d.png)
-#![Rplot30](https://user-images.githubusercontent.com/68889345/131885756-6007df8b-9ee1-4f3a-afd2-f7b61c96bcb3.png)
-
-
-
 
 ```
 mdaplot(Calibpca_model$loadings, type = "p", show.labels = FALSE, show.lines = c(0, 0))
