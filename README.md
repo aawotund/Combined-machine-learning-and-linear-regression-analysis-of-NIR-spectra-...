@@ -71,7 +71,7 @@ We thank the creators of these useful packages.
 
 ## 1.3 Highlight of Blind folded Formulations 
 
-|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|Actual Mass IS (g)|Starch|
+|Names|% AC. |Actual Mass AC (moles)|Actua Mass AA (moles)|Actual Mass LA (moles)|Actual Mass IS (g)|Starch(g)|
 |---|---|---|---|---|---|---|
 | Sample A| 10 | 10 | 90 | 0 | 0 | 0 |
 | Sample B| 90 | 90 | 0 | 10 | 0 | 0 | 
@@ -85,7 +85,7 @@ We thank the creators of these useful packages.
 
 ## 1.4 Highlight of Blind folded Ternary Formulations Employed
 
-|Names|% AC. w/w|Actual Mass AC (g)|Actua Mass AA (g)|Actual Mass LA (g)|
+|Names|% AC. |Actual Mass AC (moles)|Actua Mass AA (moles)|Actual Mass LA (moles)|
 |---|---|---|---|---|
 | 33% AC 33% LA 33% AA| 33 | 33 | 33 | 33| 
 | 10% AC 30% LA 60% AA | 10 | 10 | 60 | 30 | 
