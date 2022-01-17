@@ -32,43 +32,42 @@ We thank the creators of these useful packages.
 
 |Names|% AC. Molar Ratio| AC. (moles)|AA. (moles)|LA. (moles)|Class|
 |---|---|---|---|---|---|
-| 100% AC| 100 | 100 | 0 | 0 |High | 
-| 100% AA| 0 | 0 | 100 | 0 | None | 
-| 100% LA| 0 | 0 | 0 | 100 | None | 
-| 90% AC 10% LA| 90 | 90 | 0 | 10 | High | 
-| 90% AC 10% AA| 90 | 90 | 10 | 0 | High | 
-| 50% AC 50% LA| 50 | 50 | 0 | 50 | Low | 
-| 50% AC 50% AA| 50 | 50 | 50 | 0 | Low | 
-| 10% AC 90% LA| 10 | 10 | 0 | 90 | Low | 
-| 10% AC 90% AA| 10 | 10 | 90 | 0 | Low | 
-| 10% AA 90% LA| 0 | 0 | 10 | 90 | Low 0R None | 
-| 90% AA 10% LA| 0 | 0 | 90 | 10 | Low 0R None | 
-| 50% AA 50% LA| 0 | 0 | 50 | 50 | Low 0R None | 
+| 100% AC| 100 | 100 | 0 | 0 | OK | 
+| 100% AA| 0 | 0 | 100 | 0 | SUB | 
+| 100% LA| 0 | 0 | 0 | 100 | SUB | 
+| 90% AC 10% LA| 90 | 90 | 0 | 10 | OK | 
+| 90% AC 10% AA| 90 | 90 | 10 | 0 | OK | 
+| 50% AC 50% LA| 50 | 50 | 0 | 50 | SUB | 
+| 50% AC 50% AA| 50 | 50 | 50 | 0 | SUB | 
+| 10% AC 90% LA| 10 | 10 | 0 | 90 | SUB | 
+| 10% AC 90% AA| 10 | 10 | 90 | 0 | SUB | 
+| 10% AA 90% LA| 0 | 0 | 10 | 90 | SUB | 
+| 90% AA 10% LA| 0 | 0 | 90 | 10 | SUB | 
+| 50% AA 50% LA| 0 | 0 | 50 | 50 | SUB | 
 
 ## 1.2 Highlight of Tylenol and TopCare Brand Formulations
 
 |Names|Actual Mass TEXST (g)|Actual Mass TREST (g)|Actual Mass TCESSC (g)|Actual Mass TCRES (g)|Actual Mass TRARE (g)|Actual Mass LA (g)|Class|
 |---|---|---|---|---|---|---|---|
-| 100% TEXST| 100 | 0 | 0 | 0 | 0 | 0 |High|
-| 100% TRARE| 0 | 0 | 0 | 0 | 100 | 0 |High|
-| 100% TREST| 0 | 100 | 0 | 0 | 0 | 0 |High|
-| 100% TCESSC| 0 | 0 | 100 | 0 | 0 | 0 |High|
-| 100% TCRES| 0 | 0 | 0 | 100 | 0 | 0 |High|
-| 90% TEXST 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |High|
-| 90% TRARE 10% LA| 0 | 0 | 0 | 0 | 90 | 10 |High|
-| 90% TREST 10% LA| 0 | 90 | 0 | 0 | 0 | 10 |High|
-| 90% TCESSC 10% LA| 0 | 0 | 90 | 0 | 0 | 10 |High|
-| 90% TCRES 10% LA| 0 | 0 | 0 | 90 | 0 | 10 |High|
-| 50% TEXST 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |Low|
-| 50% TRARE 50% LA| 0 | 0 | 0 | 0 | 50 | 50 |Low|
-| 50% TREST 50% LA| 0 | 50 | 0 | 0 | 0 | 50 |Low|
-| 50% TCESSC 50% LA| 0 | 0 | 50 | 0 | 0 | 50 |Low|
-| 50% TCRES 50% LA| 0 | 0 | 0 | 50 | 0 | 50 |Low|
-| 10% TEXST 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |Low|
-| 10% TRARE 90% LA| 0 | 0 | 0 | 0 | 10 | 90 |Low|
-| 10% TREST 90% LA| 0 | 10 | 0 | 0 | 0 | 90 |Low|
-| 10% TCESSC 90% LA| 0 | 0 | 10 | 0 | 0 | 90 |Low|
-| 10% TCRES 90% LA| 0 | 0 | 0 | 10 | 0 | 90 |Low|
+| 100% TEXST| 100 | 0 | 0 | 0 | 0 | 0 | OK |
+| 100% TRARE| 0 | 0 | 0 | 0 | 100 | 0 | OK |
+| 100% TREST| 0 | 100 | 0 | 0 | 0 | 0 | OK |
+| 100% TCESSC| 0 | 0 | 100 | 0 | 0 | 0 | OK |
+| 100% TCRES| 0 | 0 | 0 | 100 | 0 | 0 | OK |
+| 90% TEXST 10% LA| 90 | 0 | 0 | 0 | 0 | 10 |SUB|
+| 90% TRARE 10% LA| 0 | 0 | 0 | 0 | 90 | 10 |SUB|
+| 90% TREST 10% LA| 0 | 90 | 0 | 0 | 0 | 10 |SUB|
+| 90% TCESSC 10% LA| 0 | 0 | 90 | 0 | 0 | 10 |SUB|
+| 90% TCRES 10% LA| 0 | 0 | 0 | 90 | 0 | 10 |SUB|
+| 50% TEXST 50% LA| 50 | 0 | 0 | 0 | 0 | 50 |SUB|
+| 50% TRARE 50% LA| 0 | 0 | 0 | 0 | 50 | 50 |SUB|
+| 50% TREST 50% LA| 0 | 50 | 0 | 0 | 0 | 50 |SUB|
+| 50% TCESSC 50% LA| 0 | 0 | 50 | 0 | 0 | 50 |SUB|
+| 10% TEXST 90% LA| 10 | 0 | 0 | 0 | 0 | 90 |SUB|
+| 10% TRARE 90% LA| 0 | 0 | 0 | 0 | 10 | 90 |SUB|
+| 10% TREST 90% LA| 0 | 10 | 0 | 0 | 0 | 90 |SUB|
+| 10% TCESSC 90% LA| 0 | 0 | 10 | 0 | 0 | 90 |SUB|
+| 10% TCRES 90% LA| 0 | 0 | 0 | 10 | 0 | 90 |SUB|
 
 ## 1.3 Highlight of Blind folded Formulations 
 
