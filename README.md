@@ -1,4 +1,4 @@
-# Discerning Substandard and Falsified from Genuine Pharmaceuticals : A Regression and Classification Analysis of NIR Data
+# Discrimination of substandard and falsified formulations from genuine pharmaceuticals using NIR spectra and machine learning.
   
        *Authors: Olatunde Awotunde, (University of Notre Dame) . Email: aawotund@nd.edu (Developed Chemometric Algorthms using R and      
          
