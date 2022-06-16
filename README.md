@@ -10,7 +10,8 @@
         
         : Revati Rajane, (Sapfonte Precise Solutions) . Email: revati.rajane@precise-soft.com (Developed Convoluted Neural Network for NIR data)
         
-        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: ruoyan.chen@precise-soft.com (Developed Convoluted Neural Network for NIR data)*   
+        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: ruoyan.chen@precise-soft.com (Developed Convoluted Neural Network for NIR data)  
+        : Marya Lieberman, (University of Notre Dame) . Email: mlieberm@nd.edu (Advisor)*
         
 This package uses functions developed from the following packages:
 
