@@ -8,16 +8,25 @@
         
         : Jin Cai, (University of Notre Dame) . Email: jcai@nd.edu (Generated the NIR spectra for random pharmaceutical)
         
+        : Kathleen Hayes, (University of Notre Dame) . Email: khayes5@nd.edu (Ran HPLC for the pharmaceutical formulations)
+        
         : Revati Rajane, (Sapfonte Precise Solutions) . Email: revati.rajane@precise-soft.com (Developed Convoluted Neural Network for NIR data)
         
-        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: ruoyan.chen@precise-soft.com (Developed Convoluted Neural Network for NIR data)  
+        : Ruoyan Chen, (Sapfonte Precise Solutions) . Email: ruoyan.chen@precise-soft.com (Developed Convoluted Neural Network for NIR data) 
+        
+        : Abdullah Yusuf , (Sapfonte Precise Solutions) . Email: abdullah.yusuf@precise-soft.com (Developed Convoluted Neural Network for NIR data)
+        
         : Marya Lieberman, (University of Notre Dame) . Email: mlieberm@nd.edu (Advisor)*
         
-This package uses functions developed from the following packages:
+This package uses functions developed from the following R software packages:
 
 `pls` `matplot` `dplyr` `csv` `mdatools` `stats` `graphics` `grDevices` `methods` `utils` `plyr` `caret` `e1071`. 
 
 We thank the creators of these useful packages.
+
+## These are home based coding efforts that we are exploring towards building an open source database for substandard and falsified pharmaceuticals. We would be updating progress of this study in this github page for future reference
+
+## Each code presented here represent the first step towards translating our analysis from commercial software ( The Unscrambler X) to an open source : a more detailed study for each of our statistical analysis is in prigress
 
 ## Goal
 
@@ -435,179 +444,13 @@ legend("bottomleft",legend = paste("Group",1:12),col=1:12, cex=0.5,pch=19,pt.cex
 ![Rplot30sgmerged](https://user-images.githubusercontent.com/68889345/131876535-a6821855-877d-4c7e-b1d0-983927c64bae.png)
 
 
-## PCA Analysis
 
-*Split the treated data to two : Calibration set = Calib set and validation set = testset, then build PCA model*
 
-```R
-ispect <- seq(1, 1200, 4)
-calibset <- SGspectra[-ispect, ]
-testset <- SGspectra[ispect, ]
-
-Calibpca_model <- pca(calibset, 10, scale = TRUE, info = "ACAALA PCA model")
-Calibpca_model<- selectCompNum(Calibpca_model, 5)
-```
-+ Access the loadings and the scores
-
-```R
-Calibpca_model$loadings[1:4, 1:4]
-```
+## Partial Least Squares (PLS) Regression 
 
 ```
-##############################
-   Comp 1     Comp 2      Comp 3     Comp 4
-1 0.01511032 0.09008960  0.09061374 -0.1433531
-2 0.02491434 0.08134250  0.04010265 -0.2263023
-3 0.02880470 0.06849692 -0.01527204 -0.2816507
-4 0.02839777 0.05369044 -0.06064988 -0.3126289
-##############################
+Splitting the pretreated data sets to training and test sets
 ```
-
-
-```R
-Calibpca_model$res$cal$scores[1:4, 1:4]
-```
-
-```
-##############################
-Comp 1    Comp 2    Comp 3     Comp 4
-SamplesData.NIR.A2 7.752818 -11.89528 0.6831984 -0.5235035
-SamplesData.NIR.A3 7.578034 -13.23961 1.8856384 -0.3665607
-SamplesData.NIR.A4 7.488082 -12.38351 0.1403219  1.3298068
-SamplesData.NIR.A6 7.366403 -10.72870 1.8437984 -1.5862289
-##############################
-```
-
-
-```R
-Predictnmodel <- predict(Calibpca_model, testset)
-print(Predictnmodel) 
-```
-
-```
-##############################
-Results for PCA decomposition (class pcares)
-Major fields:
-$scores - matrix with score values
-$T2 - matrix with T2 distances
-$Q - matrix with Q residuals
-$ncomp.selected - selected number of components
-$expvar - explained variance for each component
-$cumexpvar - cumulative explained variance
-##############################
-```
-
-
-+ PCA model with test set validation (we will use testset to validate) 
-
-```R
-Calibpca_model <- pca(calibset,7,scale = TRUE, x.test=testset, info = "PCA model")
-Calibpca_model <- selectCompNum(Calibpca_model, 5)
-```
-
-*Info for both result objects*
-
-```R
-print(Calibpca_model$res$cal)
-```
-
-```
-##############################
-Results for PCA decomposition (class pcares)
-Major fields:
-$scores - matrix with score values
-$T2 - matrix with T2 distances
-$Q - matrix with Q residuals
-$ncomp.selected - selected number of components
-$expvar - explained variance for each component
-$cumexpvar - cumulative explained variance
-##############################
-```
-
-```R
-print(Calibpca_model$res$test)
-```
-
-```
-##############################
-
-Results for PCA decomposition (class pcares)
-
-Major fields:
-$scores - matrix with score values
-$T2 - matrix with T2 distances
-$Q - matrix with Q residuals
-$ncomp.selected - selected number of components
-$expvar - explained variance for each component
-$cumexpvar - cumulative explained variance
-##############################
-```
-
-
-*some statistics for evaluation of a model performance*
-
-
-```
-summary(Calibpca_model)
-```
-
-```
-##############################
-
-Summary for PCA model (class pca)
-Type of limits: ddmoments
-Alpha: 0.05
-Gamma: 0.01
-
-       Eigenvals Expvar Cumexpvar Nq Nh
-Comp 1   111.087  48.72     48.72  8  2
-Comp 2    72.090  31.62     80.34  3  8
-Comp 3    11.371   4.99     85.33  7  2
-Comp 4     5.691   2.50     87.82  9  3
-Comp 5     3.580   1.57     89.39 11  3
-Comp 6     2.196   0.96     90.36 12  3
-Comp 7     1.852   0.81     91.17 12  4
-##############################
-```
-*Performance*
-
-```R
-var <- data.frame(
-  cal <- Calibpca_model$res$cal$expvar,
-  test <- Calibpca_model$res$test$expvar)
-show(round(var, 1))
-```
-
-```
-##############################
- cal test
-Comp 1 48.7 48.0
-Comp 2 31.6 32.0
-Comp 3  5.0  4.8
-Comp 4  2.5  2.7
-Comp 5  1.6  1.6
-Comp 6  1.0  0.8
-Comp 7  0.8  0.7
-##############################
-```
-
-*scores and loadings plots for PC1 vs PC2*
-
-```
-par(mfrow = c(1, 1))
-mdaplot(Calibpca_model$res$cal$scores, type = "p",show.labels = FALSE, show.lines = c(0, 0))
-```
-
-
-```
-mdaplot(Calibpca_model$loadings, type = "p", show.labels = FALSE, show.lines = c(0, 0))
-mdaplot(Calibpca_model$loadings, type = "p", show.labels = TRUE, show.lines = c(0, 0))
-```
-
-
-![Rplot31](https://user-images.githubusercontent.com/68889345/131885757-81ce8ba8-546b-4183-ac85-1723672f5d17.png)
-![Rplot31B](https://user-images.githubusercontent.com/68889345/131885758-7278c16a-8682-4fe6-acdd-8517a893ec5a.png)
-
 
 ```
 ##############################
@@ -617,6 +460,10 @@ Calibpca_modely <- SGspectra[-ispectra, 2, drop = FALSE]
 testset_modelx <- SGspectra[ispectra, -(c(1,2))]
 testset_modely <- SGspectra[ispectra, 2, drop = FALSE]
 ##############################
+```
+
+```
+Training the PLS regression model
 ```
 
 ```
@@ -794,6 +641,9 @@ $cumexpvar - cumulative explained variance
 ##############################
 ```
 
+```
+Subjecting the test set to the developed model
+```
 
 ```
 Predict_testset <- predict(PLS_Prediction, testset_modelx, testset_modely)
@@ -862,7 +712,9 @@ show(PLS_Prediction2$ncomp.selected)
 ##############################
 ```
 
-
+```
+Root Mean Square Error (RMSE) of the predictions
+```
 
 ```
 plotRMSE(PLS_Prediction1)
@@ -932,6 +784,10 @@ plot(PLS_Prediction2)
 ```
 
 ![Rplot45](https://user-images.githubusercontent.com/68889345/131889300-99d611e0-a0fc-446d-96a1-5ded04ecc3d4.png)
+
+
+## Soft Independent Modeling of Class Analogy (SIMCA)
+
 
 ```
 ispectraSIMCA = seq(4, 1200, 4)
@@ -1015,7 +871,7 @@ Cv      NA        NA 94  0  0  6    NA  0.94     0.94
 ##############################
 ```
 
-*Predict the testset using the SIMCA model*
+*Predict the test set using the SIMCA model*
 
 ```
 Predict_testsetSimca = predict(Simca_pca_s.1090ACAA, testset_modelSimcax, testset_modelSimcay)
@@ -1089,7 +945,7 @@ m.100LA <- simca(s.100LA, "100LA", 12)
 m.100LA <- selectCompNum(m.100LA, 12)
 ```
 
-*Apply SIMCAM*
+*Apply SIMCA*
 
 ```
 Simca_m.All <- simcam(list(m.1090ACAA, m.1090ACLA, m.1090AALA,m.5050ACAA,m.5050ACLA,
