@@ -773,17 +773,6 @@ plotPredictions(PLS_Prediction1$res$cal, ncomp = 2, show.stat = TRUE)
 ![Rplot43](https://user-images.githubusercontent.com/68889345/131889297-cab5a08f-4729-4d9d-9917-cfd9cda72ac1.png)
 
 
-```
-plot(PLS_Prediction1)
-```
-
-![Rplot44](https://user-images.githubusercontent.com/68889345/131889299-036ff235-98ed-4640-a0b4-f1e572ddb2d9.png)
-
-```
-plot(PLS_Prediction2)
-```
-
-![Rplot45](https://user-images.githubusercontent.com/68889345/131889300-99d611e0-a0fc-446d-96a1-5ded04ecc3d4.png)
 
 
 ## Soft Independent Modeling of Class Analogy (SIMCA)
