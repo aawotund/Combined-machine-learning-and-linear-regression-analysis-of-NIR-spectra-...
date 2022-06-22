@@ -820,12 +820,6 @@ Gamma: 0.01
 Cal   8.43     71.73 95  0  0  5    NA  0.95     0.95
 ```
 
-```
-plot(Simca_pca_s.1090ACAA)
-```
-
-![Rplot46](https://user-images.githubusercontent.com/68889345/131889302-1da99cde-8784-44bb-ae41-3dd07e2ac8e9.png)
-
 
 ```
 plotSensitivity(Simca_pca_s.1090ACAA)
